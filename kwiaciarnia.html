@@ -4,91 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kwiaciarnia „Zielony Zakątek” | Skierniewice</title>
-    <link rel="icon" type="image/png" href="kwiaciarnia/favicon.png">
+    <link rel="icon" type="image/png" href="kwiaciarnia/img/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Courier+Prime&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        paper: '#f5f2eb',
-                        ruby: '#d81159',
-                        magenta: '#8f2d56',
-                        forest: '#0a2e1c',
-                        leaf: '#1b4332',
-                        ink: '#111111',
-                        blush: '#f2c4ce',
-                        black: '#000000',
-                        white: '#ffffff'
-                    },
-                    fontFamily: {
-                        editorial: ['"Playfair Display"', 'serif'],
-                        reading: ['"Cormorant Garamond"', 'serif'],
-                        mono: ['"Courier Prime"', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        * { border-radius: 0 !important; }
-
-        body {
-            background-color: theme('colors.paper');
-            color: theme('colors.ink');
-            overflow-x: hidden;
-        }
-
-        .noise-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            z-index: 9998;
-            opacity: 0.2;
-            background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E');
-            mix-blend-mode: multiply;
-        }
-
-        .jagged-border {
-            border-top: 2px solid theme('colors.ink');
-            position: relative;
-        }
-        .jagged-border::after {
-            content: '';
-            position: absolute;
-            top: -4px; right: 5%; width: 40px; height: 6px;
-            background-color: theme('colors.ruby');
-            transform: rotate(-2deg);
-        }
-
-        ::selection {
-            background: theme('colors.ruby');
-            color: theme('colors.paper');
-        }
-
-        .editorial-img {
-            transition: filter 0.5s ease, transform 0.5s ease;
-            filter: contrast(1.15) saturate(1.1) brightness(0.95);
-        }
-        .editorial-img:hover {
-            filter: contrast(1.2) saturate(1.3) brightness(1);
-        }
-
-        .modal-backdrop {
-            backdrop-filter: blur(4px) grayscale(0.8);
-            background-color: rgba(10, 46, 28, 0.85);
-        }
-
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: theme('colors.paper'); }
-        ::-webkit-scrollbar-thumb { background: theme('colors.magenta'); }
-    </style>
+    <link rel="stylesheet" href="kwiaciarnia/css/style.css">
 </head>
 <body class="font-reading antialiased relative pt-16 md:pt-12">
 
@@ -141,12 +63,18 @@
 
             <div class="w-full lg:w-7/12 relative z-10 mt-8 lg:mt-0 pb-16 lg:pb-0">
                 <div class="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[5/4]">
-                    <img src="kwiaciarnia/lilly.jpg"
+                    <img src="kwiaciarnia/img/lilly-960.webp"
+                         srcset="kwiaciarnia/img/lilly-640.webp 640w, kwiaciarnia/img/lilly-960.webp 960w, kwiaciarnia/img/lilly-1280.webp 1280w, kwiaciarnia/img/lilly-1600.webp 1600w"
+                         sizes="(min-width: 1600px) 620px, (min-width: 1024px) 44vw, (min-width: 768px) 70vw, 80vw"
                          alt="Kompozycja kwiatowa"
+                         fetchpriority="high" decoding="async"
                          class="editorial-img absolute top-0 right-0 w-4/5 md:w-3/4 h-4/5 md:h-full object-cover border-4 border-paper shadow-2xl z-10">
 
-                    <img src="kwiaciarnia/rose.jpg"
+                    <img src="kwiaciarnia/img/rose-960.webp"
+                         srcset="kwiaciarnia/img/rose-640.webp 640w, kwiaciarnia/img/rose-960.webp 960w, kwiaciarnia/img/rose-1280.webp 1280w, kwiaciarnia/img/rose-1600.webp 1600w"
+                         sizes="(min-width: 1600px) 550px, (min-width: 1024px) 39vw, (min-width: 768px) 62vw, 60vw"
                          alt="Różowe kwiaty"
+                         decoding="async"
                          class="editorial-img absolute bottom-0 left-0 w-3/5 md:w-2/3 h-3/5 md:h-4/5 object-cover border-4 border-magenta shadow-xl z-20 -rotate-2 origin-bottom-left">
 
                     <div class="absolute right-4 md:-right-8 bottom-1/4 bg-ruby text-paper font-editorial italic text-xl md:text-2xl py-2 px-4 md:px-6 rotate-90 origin-bottom-right z-30 shadow-lg border border-paper/20">
@@ -176,7 +104,12 @@
                     </div>
                     <div class="w-full lg:w-7/12 relative order-1 lg:order-2">
                         <div class="w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden shadow-[8px_8px_0_0_rgba(10,46,28,1)] md:shadow-[15px_15px_0_0_rgba(10,46,28,1)] border-2 border-forest transform group-hover:rotate-1 transition-transform duration-700">
-                            <img src="kwiaciarnia/wedding.jpg" alt="Bukiety ślubne" class="w-full h-full object-cover editorial-img">
+                            <img src="kwiaciarnia/img/wedding-960.webp"
+                                 srcset="kwiaciarnia/img/wedding-640.webp 640w, kwiaciarnia/img/wedding-960.webp 960w, kwiaciarnia/img/wedding-1280.webp 1280w, kwiaciarnia/img/wedding-1600.webp 1600w"
+                                 sizes="(min-width: 1600px) 800px, (min-width: 1024px) 56vw, 92vw"
+                                 alt="Bukiety ślubne"
+                                 loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover editorial-img">
                         </div>
                     </div>
                 </article>
@@ -191,8 +124,13 @@
                         </p>
                     </div>
                     <div class="w-full lg:w-7/12 relative order-1 lg:order-2">
-                        <div class="w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden border border-ink/20 transform -rotate-1 md:-rotate-2 bg-ink">
-                            <img src="kwiaciarnia/funrealwreath.jpg" alt="Wieńce pogrzebowe" class="w-full h-full object-cover editorial-img grayscale hover:grayscale-0 opacity-90 hover:opacity-100">
+                        <div class="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden border border-ink/20 transform -rotate-1 md:-rotate-2 bg-ink">
+                            <img src="kwiaciarnia/img/funrealwreath-960.webp"
+                                 srcset="kwiaciarnia/img/funrealwreath-640.webp 640w, kwiaciarnia/img/funrealwreath-960.webp 960w, kwiaciarnia/img/funrealwreath-1280.webp 1280w, kwiaciarnia/img/funrealwreath-1600.webp 1600w"
+                                 sizes="(min-width: 1600px) 800px, (min-width: 1024px) 56vw, 92vw"
+                                 alt="Wieńce pogrzebowe"
+                                 loading="lazy" decoding="async"
+                                 class="absolute bottom-0 left-0 w-full h-[124%] object-cover editorial-img grayscale hover:grayscale-0 opacity-90 hover:opacity-100">
                         </div>
                     </div>
                 </article>
@@ -200,7 +138,12 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-start">
                     <article class="group">
                         <div class="aspect-square w-full overflow-hidden mb-6 md:mb-8 border-b-8 border-ruby">
-                            <img src="kwiaciarnia/pots.jpg" alt="Kwiaty doniczkowe" class="w-full h-full object-cover editorial-img">
+                            <img src="kwiaciarnia/img/pots-960.webp"
+                                 srcset="kwiaciarnia/img/pots-640.webp 640w, kwiaciarnia/img/pots-960.webp 960w, kwiaciarnia/img/pots-1280.webp 1280w, kwiaciarnia/img/pots-1600.webp 1600w"
+                                 sizes="(min-width: 1600px) 672px, (min-width: 768px) 42vw, 92vw"
+                                 alt="Kwiaty doniczkowe"
+                                 loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover editorial-img">
                         </div>
                         <h4 class="font-editorial text-2xl md:text-3xl text-ink font-bold mb-3"><span class="text-ruby mr-2">03.</span> Kwiaty Doniczkowe</h4>
                         <p class="font-reading text-lg md:text-xl text-ink/80">Wyselekcjonowane rośliny doniczkowe, które wprowadzą życie do każdego wnętrza. Oferujemy doradztwo w doborze i pielęgnacji.</p>
@@ -208,7 +151,12 @@
 
                     <article class="group md:mt-24 lg:mt-32">
                         <div class="aspect-[4/5] w-full overflow-hidden mb-6 md:mb-8 shadow-[-8px_8px_0_0_rgba(143,45,86,1)] border border-magenta">
-                            <img src="kwiaciarnia/boxoflowers.jpg" alt="Poczta kwiatowa" class="w-full h-full object-cover editorial-img">
+                            <img src="kwiaciarnia/img/boxoflowers-960.webp"
+                                 srcset="kwiaciarnia/img/boxoflowers-640.webp 640w, kwiaciarnia/img/boxoflowers-960.webp 960w, kwiaciarnia/img/boxoflowers-1280.webp 1280w, kwiaciarnia/img/boxoflowers-1600.webp 1600w"
+                                 sizes="(min-width: 1600px) 672px, (min-width: 768px) 42vw, 92vw"
+                                 alt="Poczta kwiatowa"
+                                 loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover editorial-img">
                         </div>
                         <h4 class="font-editorial text-2xl md:text-3xl text-ink font-bold mb-3 lg:text-right"><span class="text-magenta mr-2">04.</span> Poczta Kwiatowa</h4>
                         <p class="font-reading text-lg md:text-xl text-ink/80 lg:text-right lg:ml-auto">Bezpośrednia dostawa pod wskazany adres na terenie całych Skierniewic. Niespodzianka, która zawsze wywołuje uśmiech.</p>
@@ -428,6 +376,11 @@
                     "Czerwone róże w białym wazonie" autorstwa Christine Sandu na Unsplash<br>
                     Zdjęcie: <a href="https://unsplash.com/photos/red-roses-in-white-ceramic-vase-HvPARWnIEhU" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/photos/red-roses-in-white-ceramic-vase-HvPARWnIEhU</a><br>
                     Profil: <a href="https://unsplash.com/@lenscapewithme" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/@lenscapewithme</a>
+                </p>
+                <p>
+                    "Różowe tulipany w papierowej torbie" autorstwa Natali N na Unsplash<br>
+                    Zdjęcie: <a href="https://unsplash.com/photos/a-bouquet-of-pink-tulips-in-a-paper-bag-w0BV_ZJU3W0" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/photos/a-bouquet-of-pink-tulips-in-a-paper-bag-w0BV_ZJU3W0</a><br>
+                    Profil: <a href="https://unsplash.com/@nattie_nn" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/@nattie_nn</a>
                 </p>
             </div>
         </div>

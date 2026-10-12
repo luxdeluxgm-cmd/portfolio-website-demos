@@ -13,68 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            laka: '#EEF0DE',
-            wosk: '#FAF8EC',
-            miod: { DEFAULT: '#E4A52A', pale: '#F4D98C' },
-            kora: { DEFAULT: '#3E2B1B', soft: '#6B5440' },
-            mech: { DEFAULT: '#56693B', deep: '#2F3D26' }
-          },
-          fontFamily: {
-            serif: ['Alegreya', 'Georgia', 'serif'],
-            sans: ['"Nunito Sans"', 'system-ui', 'sans-serif']
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="stylesheet" href="pasieka/css/style.css">
 
-  <style type="text/tailwindcss">
-    @layer components {
-      .btn { @apply inline-flex items-center justify-center rounded-sm px-5 py-3 font-bold transition-colors; }
-      .btn-dark { @apply bg-kora text-laka hover:bg-mech-deep; }
-      .btn-line { @apply border-2 border-kora text-kora hover:bg-kora hover:text-laka; }
-      .field { @apply w-full rounded-sm border border-kora/40 bg-wosk px-3 py-2.5 text-base; }
-    }
-  </style>
-
-  <style>
-    html { scroll-padding-top: 9rem; }
-    @media (min-width: 768px) { html { scroll-padding-top: 8rem; } }
-    html.lock { overflow: hidden; }
-    :focus-visible { outline: 3px solid #2F3D26; outline-offset: 3px; }
-    .on-dark :focus-visible { outline-color: #F4D98C; }
-
-    .hive { container-type: inline-size; position: relative; aspect-ratio: 1 / 0.79; }
-    .hex {
-      position: absolute; width: 38.4%; height: 56.14%;
-      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-      background: #F4D98C;
-      animation: hexIn .7s cubic-bezier(.2, .7, .2, 1) both;
-      animation-delay: var(--d, 0s);
-    }
-    .hex img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .hex-text { display: flex; align-items: center; justify-content: center; padding: 0 13%; text-align: center; background: #2F3D26; color: #EEF0DE; }
-    .hex-text p { font-family: Alegreya, Georgia, serif; font-weight: 700; font-size: clamp(.78rem, 4cqw, 1.4rem); line-height: 1.15; text-wrap: balance; }
-    @keyframes hexIn { from { opacity: 0; transform: translateY(14px) scale(.9); } to { opacity: 1; transform: none; } }
-
-    dialog { margin: auto; }
-    dialog[open] { animation: dlgIn .2s ease-out; }
-    dialog.drawer[open] { animation: drawerIn .28s cubic-bezier(.2, .7, .2, 1); }
-    @keyframes dlgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-    @keyframes drawerIn { from { transform: translateX(100%); } to { transform: none; } }
-
-    img.failed { opacity: 0; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, ::before, ::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
-    }
-  </style>
 </head>
 
 <body id="top" class="bg-laka pt-16 font-sans text-[17px] text-kora antialiased md:pt-12">
@@ -413,7 +353,8 @@
     };
     const UTM = '?utm_source=pasieka_u_wlodka_demo&utm_medium=referral';
     const sizeFor = w => (w > 900 ? 1200 : 800);
-    const photoUrl = (key, w = 800) => `pasieka/${key}-${sizeFor(w)}.webp`;
+    const IMG_DIR = 'pasieka/img/';
+    const photoUrl = (key, w = 800) => `${IMG_DIR}${key}-${sizeFor(w)}.webp`;
     const remoteUrl = (key, w) => `https://images.unsplash.com/${PHOTOS[key].src}?auto=format&fit=max&w=${w}&q=75`;
 
     const STORAGE_HONEY = 'Przechowuj w temperaturze pokojowej, z dala od światła. Skrystalizowany miód można podgrzać w kąpieli wodnej, nie wyżej niż do 40°C.';
@@ -842,7 +783,7 @@
     document.addEventListener('error', e => {
       const img = e.target;
       if (!(img instanceof HTMLImageElement)) return;
-      const m = (img.getAttribute('src') || '').match(/^img\/([A-Za-z]+)-(\d+)\.webp$/);
+      const m = (img.getAttribute('src') || '').split('/').pop().match(/^([A-Za-z]+)-(\d+)\.webp$/);
       if (m && PHOTOS[m[1]]) { img.src = remoteUrl(m[1], Number(m[2])); return; }
       img.classList.add('failed');
     }, true);

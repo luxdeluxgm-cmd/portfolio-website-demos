@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+
+/* ---- przeniesione z <style type="text/tailwindcss"> ---- */
+@layer components {
+  .btn { @apply inline-flex items-center justify-center rounded-sm px-5 py-3 font-bold transition-colors; }
+  .btn-dark { @apply bg-kora text-laka hover:bg-mech-deep; }
+  .btn-line { @apply border-2 border-kora text-kora hover:bg-kora hover:text-laka; }
+  .field { @apply w-full rounded-sm border border-kora/40 bg-wosk px-3 py-2.5 text-base; }
+}
+
+/* ---- Twoje style (przeniesione bez zmian z <style> w index.html) ---- */
+html { scroll-padding-top: 9rem; }
+@media (min-width: 768px) { html { scroll-padding-top: 8rem; } }
+html.lock { overflow: hidden; }
+:focus-visible { outline: 3px solid #2F3D26; outline-offset: 3px; }
+.on-dark :focus-visible { outline-color: #F4D98C; }
+
+.hive { container-type: inline-size; position: relative; aspect-ratio: 1 / 0.79; }
+.hex {
+  position: absolute; width: 38.4%; height: 56.14%;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: #F4D98C;
+  animation: hexIn .7s cubic-bezier(.2, .7, .2, 1) both;
+  animation-delay: var(--d, 0s);
+}
+.hex img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hex-text { display: flex; align-items: center; justify-content: center; padding: 0 13%; text-align: center; background: #2F3D26; color: #EEF0DE; }
+.hex-text p { font-family: Alegreya, Georgia, serif; font-weight: 700; font-size: clamp(.78rem, 4cqw, 1.4rem); line-height: 1.15; text-wrap: balance; }
+@keyframes hexIn { from { opacity: 0; transform: translateY(14px) scale(.9); } to { opacity: 1; transform: none; } }
+
+dialog { margin: auto; }
+dialog[open] { animation: dlgIn .2s ease-out; }
+dialog.drawer[open] { animation: drawerIn .28s cubic-bezier(.2, .7, .2, 1); }
+@keyframes dlgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes drawerIn { from { transform: translateX(100%); } to { transform: none; } }
+
+img.failed { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Klasy narzędziowe muszą być PO Twoich stylach, żeby miały pierwszeństwo (tak jak z CDN). */
+@tailwind utilities;
