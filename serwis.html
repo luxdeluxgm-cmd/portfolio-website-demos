@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-pt-12">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoBieżnik Serwis &amp; Wulkanizacja – Warszawa</title>
+<meta name="description" content="AutoBieżnik Serwis &amp; Wulkanizacja w Warszawie: wymiana opon, mechanika pojazdowa, diagnostyka komputerowa i serwis klimatyzacji.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap&subset=latin-ext" rel="stylesheet">
+<link rel="stylesheet" href="serwis/css/style.css">
+</head>
+<body class="font-sans text-ink bg-white text-[17px] leading-relaxed antialiased pt-12">
+
+<div class="fixed left-0 top-0 z-[99999] flex h-12 w-full flex-row items-center justify-center gap-3 bg-ink px-3 pb-1.5 text-white md:gap-6">
+  <span class="whitespace-nowrap font-display text-sm font-semibold uppercase tracking-wider md:text-base md:tracking-widest">Przykładowa strona</span>
+  <a href="https://jantokarzewski.pl/strony-internetowe" class="shrink-0 whitespace-nowrap rounded bg-signal px-3 py-1 font-display text-sm font-bold uppercase tracking-wider text-ink transition-colors hover:bg-white md:text-base md:tracking-widest">Powrót</a>
+  <span class="tread pointer-events-none absolute inset-x-0 bottom-0 !h-1.5" aria-hidden="true"></span>
+</div>
+
+<header class="sticky top-12 z-30 bg-white border-b border-line">
+  <div class="max-w-6xl mx-auto px-5 h-[68px] flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3" aria-label="AutoBieżnik – strona główna">
+      <svg viewBox="0 0 40 40" class="w-10 h-10" aria-hidden="true">
+        <circle cx="20" cy="20" r="16" fill="none" stroke="#13202f" stroke-width="6" stroke-dasharray="5.2 3"/>
+        <circle cx="20" cy="20" r="6" fill="#ffc800"/>
+      </svg>
+      <span class="leading-none">
+        <span class="block font-display font-bold text-[26px] tracking-tight">AutoBieżnik</span>
+        <span class="block text-[13px] text-muted mt-0.5">Serwis &amp; Wulkanizacja</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 font-medium" aria-label="Główna nawigacja">
+      <a href="#oferta" class="hover:text-sign">Oferta</a>
+      <a href="#cennik" class="hover:text-sign">Cennik</a>
+      <a href="#o-nas" class="hover:text-sign">O nas</a>
+      <a href="#kontakt" class="hover:text-sign">Kontakt</a>
+      <a href="#zdjecia" class="hover:text-sign">Zdjęcia</a>
+    </nav>
+    <a href="tel:+48555123456" class="hidden md:block font-display font-bold text-2xl text-sign whitespace-nowrap">+48 555 123 456</a>
+    <button id="menu-btn" class="md:hidden p-2 -mr-2" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav id="menu" class="hidden md:hidden border-t border-line bg-white px-5 py-3 font-medium" aria-label="Menu mobilne">
+    <a href="#oferta" class="block py-2.5">Oferta</a>
+    <a href="#cennik" class="block py-2.5">Cennik</a>
+    <a href="#o-nas" class="block py-2.5">O nas</a>
+    <a href="#kontakt" class="block py-2.5">Kontakt</a>
+    <a href="#zdjecia" class="block py-2.5">Zdjęcia</a>
+    <a href="tel:+48555123456" class="block py-2.5 text-sign font-bold">+48 555 123 456</a>
+  </nav>
+</header>
+
+<main>
+<section class="bg-sign text-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2">
+    <div class="px-5 py-14 lg:py-24 lg:pr-14 flex flex-col justify-center">
+      <h1 class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-tight">Prowadzimy Cię bezpiecznie do celu.</h1>
+      <p class="mt-6 text-blue-50 text-lg max-w-md">Opony, hamulce, diagnostyka i klimatyzacja w jednym warsztacie na Pradze. Każdą naprawę wyceniamy, zanim zaczniemy pracę.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <a href="#rezerwacja" class="bg-signal text-ink font-semibold px-6 py-3.5 rounded text-center hover:bg-white transition-colors">Zarezerwuj termin wymiany opon</a>
+        <a href="tel:+48555123456" class="border-2 border-white font-semibold px-6 py-3 rounded text-center hover:bg-white hover:text-sign transition-colors">Skontaktuj się z mechanikiem</a>
+      </div>
+    </div>
+    <div class="relative min-h-[300px] lg:min-h-[560px]">
+      <img src="serwis/img/hero-800.webp" srcset="serwis/img/hero-800.webp 800w, serwis/img/hero-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high" alt="Zbliżenie na oponę samochodu osobowego" class="absolute inset-0 w-full h-full object-cover">
+      <p id="status" class="absolute left-0 bottom-0 bg-white text-ink font-medium px-5 py-3 max-w-[85%]" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+<div class="tread" aria-hidden="true"></div>
+
+<section id="oferta" class="bg-paper py-20">
+  <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <h2 class="font-display font-bold text-5xl leading-none">Oferta</h2>
+      <p class="mt-4 text-muted max-w-xs">Cztery rzeczy, które robimy codziennie i robimy dokładnie.</p>
+      <a href="#cennik" class="inline-block mt-7 bg-sign text-white font-semibold px-6 py-3.5 rounded hover:bg-ink transition-colors">Sprawdź nasz cennik</a>
+    </div>
+    <div class="lg:col-span-8">
+      <ul class="border-t-2 border-ink">
+        <li class="grid sm:grid-cols-[15rem_1fr] gap-x-8 gap-y-1 py-6 border-b border-line">
+          <h3 class="font-display font-bold text-3xl leading-tight">Wulkanizacja i serwis opon</h3>
+          <p class="text-muted">Sezonowa wymiana opon, komputerowe wyważanie kół, naprawa ogumienia oraz hotel dla opon, czyli przechowalnia na czas, gdy nie jeździsz na danym komplecie.</p>
+        </li>
+        <li class="grid sm:grid-cols-[15rem_1fr] gap-x-8 gap-y-1 py-6 border-b border-line">
+          <h3 class="font-display font-bold text-3xl leading-tight">Mechanika pojazdowa</h3>
+          <p class="text-muted">Wymiana oleju i filtrów, naprawa układów hamulcowych i zawieszenia oraz wymiana rozrządu.</p>
+        </li>
+        <li class="grid sm:grid-cols-[15rem_1fr] gap-x-8 gap-y-1 py-6 border-b border-line">
+          <h3 class="font-display font-bold text-3xl leading-tight">Diagnostyka komputerowa</h3>
+          <p class="text-muted">Odczyt i kasowanie błędów oraz precyzyjne lokalizowanie usterek elektroniki samochodowej.</p>
+        </li>
+        <li class="grid sm:grid-cols-[15rem_1fr] gap-x-8 gap-y-1 py-6 border-b border-line">
+          <h3 class="font-display font-bold text-3xl leading-tight">Serwis klimatyzacji</h3>
+          <p class="text-muted">Nabijanie czynnika, ozonowanie, odgrzybianie i sprawdzanie szczelności układu.</p>
+        </li>
+      </ul>
+      <figure class="mt-10">
+        <img src="serwis/img/hotel-800.webp" srcset="serwis/img/hotel-800.webp 800w, serwis/img/hotel-1600.webp 1600w" sizes="(min-width: 1024px) 60vw, 100vw" alt="Regał z kompletami opon letnich" class="w-full h-64 sm:h-80 object-cover" loading="lazy">
+        <figcaption class="mt-3 text-muted text-base max-w-xl">Hotel dla opon: Twoje koła czekają na sezon na regale, a nie w ciasnym garażu.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="cennik" class="py-20">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="font-display font-bold text-5xl leading-none">Cennik</h2>
+    <p class="mt-4 text-muted max-w-xl">Ceny brutto i orientacyjne. Dokładną kwotę podamy po obejrzeniu auta, jeszcze przed rozpoczęciem pracy.</p>
+    <div class="mt-9 overflow-x-auto">
+      <table class="w-full max-w-3xl text-left">
+        <thead class="bg-sign text-white">
+          <tr><th class="px-4 py-3 font-semibold">Usługa</th><th class="px-4 py-3 font-semibold text-right whitespace-nowrap">Cena</th></tr>
+        </thead>
+        <tbody class="divide-y divide-line border-b border-line">
+          <tr><td class="px-4 py-3.5">Wymiana opon, komplet 4 kół do 17"</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">od 120 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Wymiana opon, komplet 4 kół 18" i większe</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">od 160 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Wyważanie koła</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">20 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Naprawa przebitej opony</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">od 50 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Hotel dla opon, sezon, komplet 4 szt.</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">150 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Wymiana oleju i filtrów (robocizna)</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">od 90 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Wymiana klocków hamulcowych, jedna oś</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">od 150 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Wymiana rozrządu</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">od 600 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Odczyt i kasowanie błędów</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">80 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Nabicie klimatyzacji</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">od 200 zł</td></tr>
+          <tr><td class="px-4 py-3.5">Ozonowanie i odgrzybianie</td><td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap">od 150 zł</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="o-nas" class="bg-paper">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2">
+    <img src="serwis/img/onas-800.webp" srcset="serwis/img/onas-800.webp 800w, serwis/img/onas-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Stos opon samochodowych" class="w-full h-72 lg:h-full min-h-[360px] object-cover" loading="lazy">
+    <div class="px-5 py-16 lg:py-24 lg:pl-14">
+      <h2 class="font-display font-bold text-5xl leading-none">O nas</h2>
+      <p class="mt-6 text-xl max-w-lg">Jesteśmy zespołem pasjonatów motoryzacji z ponad 10-letnim doświadczeniem w branży.</p>
+      <p class="mt-4 text-muted max-w-lg">W AutoBieżnik wiemy, że sprawny samochód to fundament Twojego bezpieczeństwa. Dlatego do każdego pojazdu podchodzimy z najwyższą starannością, używając nowoczesnego sprzętu diagnostycznego i sprawdzonych części.</p>
+      <p class="mt-4 text-muted max-w-lg">Stawiamy na pełną transparentność – u nas zawsze wiesz, co naprawiamy i za co płacisz. Zaufaj profesjonalistom i ruszaj w drogę bez obaw.</p>
+    </div>
+  </div>
+</section>
+
+<img src="serwis/img/banner-800.webp" srcset="serwis/img/banner-800.webp 800w, serwis/img/banner-1600.webp 1600w" sizes="100vw" alt="Pomarańczowy pachołek drogowy obok stosu opon" class="w-full h-56 sm:h-72 object-cover" loading="lazy">
+
+<section id="kontakt" class="py-20">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="font-display font-bold text-5xl leading-none">Kontakt</h2>
+    <div class="mt-10 grid lg:grid-cols-2 gap-14">
+      <div>
+        <address class="not-italic text-lg space-y-1">
+          <p class="font-semibold">AutoBieżnik Serwis &amp; Wulkanizacja</p>
+          <p>ul. Warsztatowa 14, 03-112 Warszawa</p>
+          <p><a href="tel:+48555123456" class="font-semibold text-sign hover:underline">+48 555 123 456</a></p>
+          <p><a href="mailto:kontakt@autobieznik.pl" class="text-sign hover:underline">kontakt@autobieznik.pl</a></p>
+          <p class="text-muted">NIP: 1234567890</p>
+        </address>
+        <h3 class="font-display font-bold text-3xl mt-10">Godziny otwarcia</h3>
+        <dl class="mt-3 max-w-md divide-y divide-line border-y border-line">
+          <div class="flex justify-between py-2.5"><dt>Poniedziałek – Piątek</dt><dd class="font-semibold">08:00 – 18:00</dd></div>
+          <div class="flex justify-between py-2.5"><dt>Sobota</dt><dd class="font-semibold">08:00 – 14:00</dd></div>
+          <div class="flex justify-between py-2.5"><dt>Niedziela</dt><dd class="font-semibold">Zamknięte</dd></div>
+        </dl>
+        <div class="mt-8 bg-signal text-ink p-5 max-w-md">
+          <p class="font-display font-bold text-2xl leading-tight">Awaria w niedzielę lub w nocy?</p>
+          <p class="mt-1">Możliwość wezwania lawety 24/7 pod numerem alarmowym <a href="tel:+48555123456" class="font-bold underline">+48 555 123 456</a>.</p>
+        </div>
+      </div>
+
+      <div id="rezerwacja">
+        <h3 class="font-display font-bold text-3xl">Zarezerwuj termin wymiany opon</h3>
+        <p class="mt-2 text-muted">Zostaw dane, a oddzwonimy i potwierdzimy godzinę wizyty.</p>
+        <form id="rez" class="mt-6 space-y-5">
+          <div>
+            <label for="imie" class="block font-medium mb-1">Imię</label>
+            <input id="imie" type="text" required autocomplete="given-name" class="w-full border border-ink/40 rounded px-3.5 py-2.5 bg-white">
+          </div>
+          <div>
+            <label for="tel" class="block font-medium mb-1">Telefon</label>
+            <input id="tel" type="tel" required autocomplete="tel" class="w-full border border-ink/40 rounded px-3.5 py-2.5 bg-white">
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="auto" class="block font-medium mb-1">Marka i model auta</label>
+              <input id="auto" type="text" class="w-full border border-ink/40 rounded px-3.5 py-2.5 bg-white">
+            </div>
+            <div>
+              <label for="rozmiar" class="block font-medium mb-1">Rozmiar kół</label>
+              <select id="rozmiar" class="w-full border border-ink/40 rounded px-3.5 py-2.5 bg-white">
+                <option>Do 16"</option>
+                <option>17"</option>
+                <option>18" i większe</option>
+                <option>Nie wiem</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="termin" class="block font-medium mb-1">Preferowany termin</label>
+            <input id="termin" type="date" class="w-full border border-ink/40 rounded px-3.5 py-2.5 bg-white">
+          </div>
+          <button type="submit" class="bg-ink text-white font-semibold px-6 py-3.5 rounded hover:bg-sign transition-colors">Wyślij rezerwację</button>
+          <p id="rez-ok" class="hidden bg-paper border border-line px-4 py-3" role="status">Dziękujemy! To strona demonstracyjna, więc rezerwacja nie została nigdzie wysłana.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zdjecia" class="bg-paper py-14">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="font-display font-bold text-4xl leading-none">Zdjęcia</h2>
+    <p class="mt-4 text-muted max-w-xl">Fotografie na stronie pochodzą z serwisu Unsplash i są używane na podstawie licencji Unsplash. Dziękujemy autorom.</p>
+    <ul class="mt-6 space-y-1.5">
+      <li>Strona główna, zbliżenie na oponę: <a class="text-sign underline" href="https://unsplash.com/photos/dYlVT5Ktj6U" target="_blank" rel="noopener">Chris Saran</a></li>
+      <li>Oferta, regał z oponami: <a class="text-sign underline" href="https://unsplash.com/photos/ebNa1XKQX_8" target="_blank" rel="noopener">Robert Laursoo</a></li>
+      <li>O nas, stos opon: <a class="text-sign underline" href="https://unsplash.com/photos/6uhzhjdDbto" target="_blank" rel="noopener">Jonathan Borba</a></li>
+      <li>Pachołek obok opon: <a class="text-sign underline" href="https://unsplash.com/photos/rRaApBvfSkA" target="_blank" rel="noopener">Jon Tyson</a></li>
+    </ul>
+    <p class="mt-5"><a class="text-sign underline" href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="bg-ink text-white">
+  <div class="max-w-6xl mx-auto px-5 py-12 grid sm:grid-cols-3 gap-8">
+    <div>
+      <p class="font-display font-bold text-3xl leading-none">AutoBieżnik</p>
+      <p class="mt-1 text-white/70">Serwis &amp; Wulkanizacja</p>
+      <p class="mt-3 text-white/70">Prowadzimy Cię bezpiecznie do celu.</p>
+    </div>
+    <div class="text-white/80">
+      <p>ul. Warsztatowa 14</p>
+      <p>03-112 Warszawa</p>
+      <p class="mt-2"><a href="tel:+48555123456" class="hover:text-signal">+48 555 123 456</a></p>
+      <p><a href="mailto:kontakt@autobieznik.pl" class="hover:text-signal">kontakt@autobieznik.pl</a></p>
+    </div>
+    <div class="text-white/80">
+      <p>Pon – Pt: 08:00 – 18:00</p>
+      <p>Sob: 08:00 – 14:00</p>
+      <p>Niedziela: zamknięte</p>
+      <p class="mt-2">Laweta 24/7: <a href="tel:+48555123456" class="hover:text-signal">+48 555 123 456</a></p>
+    </div>
+  </div>
+  <div class="border-t border-white/15">
+    <div class="max-w-6xl mx-auto px-5 py-5 flex flex-col sm:flex-row sm:justify-between gap-2 text-sm text-white/70">
+      <div class="flex flex-col gap-2">
+        <p>© 2026 AutoBieżnik Serwis &amp; Wulkanizacja. NIP: 1234567890</p>
+        <p>Strona przygotowana przez <a href="https://jantokarzewski.pl" class="font-semibold underline hover:text-signal">Jana Tokarzewskiego</a>.</p>
+      </div>
+      <p>Strona demonstracyjna. Firma i dane są fikcyjne. <a href="#zdjecia" class="underline hover:text-signal">Zdjęcia</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const btn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
+btn.addEventListener('click', () => {
+  const hidden = menu.classList.toggle('hidden');
+  btn.setAttribute('aria-expanded', String(!hidden));
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  menu.classList.add('hidden');
+  btn.setAttribute('aria-expanded', 'false');
+}));
+
+const now = new Date();
+const day = now.getDay();
+const hour = now.getHours() + now.getMinutes() / 60;
+const range = day === 0 ? null : day === 6 ? [8, 14] : [8, 18];
+document.getElementById('status').textContent = range && hour >= range[0] && hour < range[1]
+  ? 'Otwarte teraz, zapraszamy do ' + range[1] + ':00'
+  : 'Teraz zamknięte. Laweta 24/7 pod numerem alarmowym.';
+
+document.getElementById('rez').addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('rez-ok').classList.remove('hidden');
+  e.target.reset();
+});
+</script>
+</body>
+</html>
