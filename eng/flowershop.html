@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florist "Green Corner" | Skierniewice</title>
+    <link rel="icon" type="image/png" href="flowershop/img/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Courier+Prime&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="flowershop/css/style.css">
+</head>
+<body class="font-reading antialiased relative pt-16 md:pt-12">
+
+    <div class="fixed top-0 left-0 w-full h-16 md:h-12 bg-ink text-paper z-[99999] flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 px-4 border-b-2 border-ruby shadow-md">
+        <span class="font-mono text-[10px] md:text-xs uppercase tracking-widest text-center">Sample website</span>
+        <a href="https://jantokarzewski.pl/strony-internetowe" class="bg-paper text-ink font-mono text-[10px] md:text-xs px-3 py-1 uppercase tracking-widest font-bold hover:bg-ruby hover:text-paper transition-colors">
+            Return
+        </a>
+    </div>
+
+    <div class="noise-overlay"></div>
+
+    <header class="w-full px-4 md:px-8 py-6 border-b-2 border-forest relative z-40 bg-paper/90 backdrop-blur-sm sticky top-16 md:top-12">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="#" class="group text-center md:text-left">
+                <h1 class="font-editorial text-3xl md:text-4xl font-black text-ruby leading-none tracking-tighter uppercase relative inline-block">
+                    Green <span class="text-forest italic">Corner</span>
+                    <span class="absolute -bottom-1 -right-2 w-8 h-[2px] bg-magenta transform -rotate-6 group-hover:rotate-0 transition-transform"></span>
+                </h1>
+            </a>
+
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-8 font-editorial text-sm md:text-base tracking-[0.2em] uppercase font-bold text-forest">
+                <a href="#kolekcja" class="hover:text-black border-b border-transparent hover:border-ruby transition-colors pb-1">Collection</a>
+                <a href="#uslugi" class="hover:text-black border-b border-transparent hover:border-ruby transition-colors pb-1">Services</a>
+                <a href="#zamow" class="hover:text-black border-b border-transparent hover:border-ruby transition-colors pb-1">Order</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-[1600px] mx-auto">
+        <section id="start" class="relative flex flex-col lg:flex-row items-center px-4 md:px-12 lg:px-20 py-12 md:py-24 gap-12 lg:gap-8 overflow-hidden min-h-[85vh]">
+
+            <div class="hidden lg:block absolute -left-16 top-20 font-editorial text-[18rem] font-black text-blush opacity-20 leading-none z-0 rotate-[-5deg] pointer-events-none select-none">
+                FLORA
+            </div>
+
+            <div class="w-full lg:w-5/12 z-10 relative flex flex-col items-start pt-8 lg:pt-0">
+                <p class="font-mono text-xs md:text-sm tracking-[0.3em] text-black mb-4 md:mb-8 uppercase border-l-2 border-magenta pl-3 md:pl-4">Agnieszka Kaczmarek</p>
+                <h2 class="font-editorial text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.85] text-forest font-black mb-6 md:mb-10">
+                    Out of love <br>
+                    <span class="text-ruby italic font-normal text-6xl sm:text-7xl md:text-8xl lg:text-9xl ml-4 md:ml-8 block mt-2">for nature.</span>
+                </h2>
+                <p class="font-reading text-xl md:text-2xl leading-snug text-black mb-8 md:mb-12 max-w-lg">
+                    Bouquets for every occasion. We reject symmetry in favor of raw beauty and sophisticated form, created in the heart of Skierniewice.
+                </p>
+                <a href="#zamow" class="inline-block border-2 border-forest bg-forest text-paper px-8 md:px-12 py-3 md:py-4 font-editorial uppercase tracking-widest text-base md:text-lg hover:bg-ruby hover:border-ruby transition-all hover:-translate-y-1 hover:translate-x-1 shadow-[4px_4px_0px_0px_rgba(216,17,89,1)]">
+                    Order a Bouquet
+                </a>
+            </div>
+
+            <div class="w-full lg:w-7/12 relative z-10 mt-8 lg:mt-0 pb-16 lg:pb-0">
+                <div class="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[5/4]">
+                    <img src="flowershop/img/lilly-960.webp"
+                         srcset="flowershop/img/lilly-640.webp 640w, flowershop/img/lilly-960.webp 960w, flowershop/img/lilly-1280.webp 1280w, flowershop/img/lilly-1600.webp 1600w"
+                         sizes="(min-width: 1600px) 620px, (min-width: 1024px) 44vw, (min-width: 768px) 70vw, 80vw"
+                         alt="Floral arrangement"
+                         fetchpriority="high" decoding="async"
+                         class="editorial-img absolute top-0 right-0 w-4/5 md:w-3/4 h-4/5 md:h-full object-cover border-4 border-paper shadow-2xl z-10">
+
+                    <img src="flowershop/img/rose-960.webp"
+                         srcset="flowershop/img/rose-640.webp 640w, flowershop/img/rose-960.webp 960w, flowershop/img/rose-1280.webp 1280w, flowershop/img/rose-1600.webp 1600w"
+                         sizes="(min-width: 1600px) 550px, (min-width: 1024px) 39vw, (min-width: 768px) 62vw, 60vw"
+                         alt="Pink flowers"
+                         decoding="async"
+                         class="editorial-img absolute bottom-0 left-0 w-3/5 md:w-2/3 h-3/5 md:h-4/5 object-cover border-4 border-magenta shadow-xl z-20 -rotate-2 origin-bottom-left">
+
+                    <div class="absolute right-4 md:-right-8 bottom-1/4 bg-ruby text-paper font-editorial italic text-xl md:text-2xl py-2 px-4 md:px-6 rotate-90 origin-bottom-right z-30 shadow-lg border border-paper/20">
+                        Est. 2023
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="uslugi" class="py-16 md:py-24 px-4 md:px-12 lg:px-20 relative jagged-border mt-8 md:mt-16">
+
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-4">
+                <h3 class="font-editorial text-4xl md:text-6xl lg:text-7xl text-forest uppercase tracking-tighter font-black leading-none">Our <br><span class="text-ruby italic pl-8 md:pl-16">Services</span></h3>
+                <p class="font-mono text-sm tracking-widest text-black uppercase max-w-xs text-right">We reject patterns. We create arrangements with a soul.</p>
+            </div>
+
+            <div class="flex flex-col gap-24 md:gap-32">
+
+                <article class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 group">
+                    <div class="w-full lg:w-5/12 relative order-2 lg:order-1 pt-8 lg:pt-0 lg:pr-12">
+                        <span class="absolute -top-12 lg:-top-20 -left-4 lg:-left-8 text-7xl lg:text-9xl font-editorial font-black text-blush opacity-30 pointer-events-none">01</span>
+                        <h4 class="font-editorial text-3xl md:text-4xl text-ruby mb-4 font-bold tracking-wide">Wedding Bouquets</h4>
+                        <p class="font-reading text-lg md:text-xl text-ink leading-relaxed border-l-2 border-forest pl-4 md:pl-6">
+                            Unique arrangements that will complement this most important day. 
+                            We reject catalog patterns in favor of original, vibrant bouquets tailored to your character.
+                        </p>
+                    </div>
+                    <div class="w-full lg:w-7/12 relative order-1 lg:order-2">
+                        <div class="w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden shadow-[8px_8px_0_0_rgba(10,46,28,1)] md:shadow-[15px_15px_0_0_rgba(10,46,28,1)] border-2 border-forest transform group-hover:rotate-1 transition-transform duration-700">
+                            <img src="flowershop/img/wedding-960.webp"
+                                 srcset="flowershop/img/wedding-640.webp 640w, flowershop/img/wedding-960.webp 960w, flowershop/img/wedding-1280.webp 1280w, flowershop/img/wedding-1600.webp 1600w"
+                                 sizes="(min-width: 1600px) 800px, (min-width: 1024px) 56vw, 92vw"
+                                 alt="Wedding bouquets"
+                                 loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover editorial-img">
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16 group">
+                    <div class="w-full lg:w-5/12 relative order-2 lg:order-1 pt-8 lg:pt-0 lg:pl-12">
+                        <span class="absolute -top-12 lg:-top-20 -right-4 lg:-right-8 text-7xl lg:text-9xl font-editorial font-black text-forest opacity-10 pointer-events-none">02</span>
+                        <h4 class="font-editorial text-3xl md:text-4xl text-forest mb-4 font-bold tracking-wide lg:text-right">Funeral Wreaths</h4>
+                        <p class="font-reading text-lg md:text-xl text-ink leading-relaxed border-r-2 border-ruby pr-4 md:pr-6 lg:text-right">
+                            Dignified, elegant, and respectful condolence arrangements.
+                            We rely on natural materials and classic forms to express what is hard to say.
+                        </p>
+                    </div>
+                    <div class="w-full lg:w-7/12 relative order-1 lg:order-2">
+                        <div class="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden border border-ink/20 transform -rotate-1 md:-rotate-2 bg-ink">
+                            <img src="flowershop/img/funrealwreath-960.webp"
+                                 srcset="flowershop/img/funrealwreath-640.webp 640w, flowershop/img/funrealwreath-960.webp 960w, flowershop/img/funrealwreath-1280.webp 1280w, flowershop/img/funrealwreath-1600.webp 1600w"
+                                 sizes="(min-width: 1600px) 800px, (min-width: 1024px) 56vw, 92vw"
+                                 alt="Funeral wreaths"
+                                 loading="lazy" decoding="async"
+                                 class="absolute bottom-0 left-0 w-full h-[124%] object-cover editorial-img grayscale hover:grayscale-0 opacity-90 hover:opacity-100">
+                        </div>
+                    </div>
+                </article>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-start">
+                    <article class="group">
+                        <div class="aspect-square w-full overflow-hidden mb-6 md:mb-8 border-b-8 border-ruby">
+                            <img src="flowershop/img/pots-960.webp"
+                                 srcset="flowershop/img/pots-640.webp 640w, flowershop/img/pots-960.webp 960w, flowershop/img/pots-1280.webp 1280w, flowershop/img/pots-1600.webp 1600w"
+                                 sizes="(min-width: 1600px) 672px, (min-width: 768px) 42vw, 92vw"
+                                 alt="Potted flowers"
+                                 loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover editorial-img">
+                        </div>
+                        <h4 class="font-editorial text-2xl md:text-3xl text-ink font-bold mb-3"><span class="text-ruby mr-2">03.</span> Potted Flowers</h4>
+                        <p class="font-reading text-lg md:text-xl text-ink/80">Selected potted plants that will bring life to any interior. We offer advice on selection and care.</p>
+                    </article>
+
+                    <article class="group md:mt-24 lg:mt-32">
+                        <div class="aspect-[4/5] w-full overflow-hidden mb-6 md:mb-8 shadow-[-8px_8px_0_0_rgba(143,45,86,1)] border border-magenta">
+                            <img src="flowershop/img/boxoflowers-960.webp"
+                                 srcset="flowershop/img/boxoflowers-640.webp 640w, flowershop/img/boxoflowers-960.webp 960w, flowershop/img/boxoflowers-1280.webp 1280w, flowershop/img/boxoflowers-1600.webp 1600w"
+                                 sizes="(min-width: 1600px) 672px, (min-width: 768px) 42vw, 92vw"
+                                 alt="Flower delivery"
+                                 loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover editorial-img">
+                        </div>
+                        <h4 class="font-editorial text-2xl md:text-3xl text-ink font-bold mb-3 lg:text-right"><span class="text-magenta mr-2">04.</span> Flower Delivery</h4>
+                        <p class="font-reading text-lg md:text-xl text-ink/80 lg:text-right lg:ml-auto">Direct delivery to the specified address throughout Skierniewice. A surprise that always brings a smile.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="zamow" class="mt-16 md:mt-32">
+            <div class="w-full bg-forest text-paper px-4 md:px-12 lg:px-20 py-16 md:py-24 relative overflow-hidden">
+
+                <div class="absolute top-0 right-0 w-64 h-64 bg-leaf opacity-50 transform translate-x-1/3 -translate-y-1/3 rotate-45 z-0 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-32 h-32 bg-ruby transform -translate-x-1/2 translate-y-1/2 rotate-12 z-0 pointer-events-none"></div>
+
+                <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 relative z-10">
+
+                    <div class="w-full lg:w-5/12 flex flex-col justify-between">
+                        <div>
+                            <h2 class="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-blush mb-6 md:mb-10 leading-[0.9]">
+                                Convey <br>
+                                <span class="italic text-paper font-normal">emotions</span> <br>
+                                with flowers.
+                            </h2>
+                            <p class="font-reading text-lg md:text-xl mb-8 md:mb-12 opacity-90 leading-relaxed border-l border-blush/30 pl-4">
+                                Fill out the form to place a preliminary order or ask a question. We will respond promptly to refine the details of form and color.
+                            </p>
+                        </div>
+
+                        <div class="font-mono text-sm md:text-base opacity-75 flex flex-col gap-3 md:gap-4 bg-leaf/20 p-6 border border-leaf/40">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-blush uppercase tracking-widest mb-1">Address</span>
+                                <span>ul. Mickiewicza 24, 96-100 Skierniewice</span>
+                            </div>
+                            <div class="flex flex-col mt-2">
+                                <span class="text-xs text-blush uppercase tracking-widest mb-1">Contact</span>
+                                <span>+48 61 845 22 11</span>
+                                <span>kontakt@zielonyzakatek.pl</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-7/12 bg-paper text-ink p-6 sm:p-8 md:p-12 relative shadow-2xl">
+
+                        <div id="formSuccess" class="absolute inset-0 bg-ruby text-paper flex flex-col items-center justify-center p-8 opacity-0 pointer-events-none transition-opacity duration-500 z-20">
+                            <h3 class="font-editorial text-3xl md:text-5xl mb-4 italic text-center font-black">Thank You</h3>
+                            <p class="font-reading text-lg md:text-xl text-center max-w-sm">
+                                Your message has been sent successfully. We will contact you as soon as possible.
+                            </p>
+                            <div class="w-16 h-1 bg-paper mt-6"></div>
+                        </div>
+
+                        <form id="contactForm" class="flex flex-col gap-6 md:gap-8 relative z-10">
+
+                            <div class="relative group">
+                                <input type="text" id="name" required
+                                       class="w-full bg-transparent border-b-2 border-forest/30 py-2 md:py-3 text-base md:text-lg font-reading focus:outline-none focus:border-ruby transition-colors peer placeholder-transparent"
+                                       placeholder="Full Name">
+                                <label for="name" class="absolute left-0 top-2 md:top-3 text-black font-editorial uppercase tracking-widest text-xs md:text-sm transition-all peer-focus:-top-4 peer-focus:text-[10px] md:peer-focus:text-xs peer-focus:text-ruby peer-valid:-top-4 peer-valid:text-[10px] md:peer-valid:text-xs peer-not-placeholder-shown:-top-4 peer-not-placeholder-shown:text-[10px] md:peer-not-placeholder-shown:text-xs">
+                                    Full Name
+                                </label>
+                            </div>
+
+                            <div class="relative group">
+                                <input type="tel" id="phone" required
+                                       class="w-full bg-transparent border-b-2 border-forest/30 py-2 md:py-3 text-base md:text-lg font-reading focus:outline-none focus:border-ruby transition-colors peer placeholder-transparent"
+                                       placeholder="Phone">
+                                <label for="phone" class="absolute left-0 top-2 md:top-3 text-black font-editorial uppercase tracking-widest text-xs md:text-sm transition-all peer-focus:-top-4 peer-focus:text-[10px] md:peer-focus:text-xs peer-focus:text-ruby peer-valid:-top-4 peer-valid:text-[10px] md:peer-valid:text-xs peer-not-placeholder-shown:-top-4 peer-not-placeholder-shown:text-[10px] md:peer-not-placeholder-shown:text-xs">
+                                    Contact Phone
+                                </label>
+                            </div>
+
+                            <div class="relative">
+                                <select id="service" required
+                                        class="w-full bg-transparent border-b-2 border-forest/30 py-2 md:py-3 text-black md:text-lg font-reading focus:outline-none focus:border-ruby transition-colors appearance-none cursor-pointer rounded-none">
+                                    <option value="" disabled selected class="text-forest/60 bg-paper">Choose service type...</option>
+                                    <option value="slub" class="bg-paper">Wedding bouquets</option>
+                                    <option value="pogrzeb" class="bg-paper">Funeral wreaths</option>
+                                    <option value="doniczkowe" class="bg-paper">Potted flowers</option>
+                                    <option value="dostawa" class="bg-paper">Flower delivery</option>
+                                    <option value="inne" class="bg-paper">Other inquiry</option>
+                                </select>
+                                <div class="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none">
+                                    <svg class="w-4 h-4 text-forest/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+
+                            <div class="relative mt-2 md:mt-4 group">
+                                <textarea id="message" rows="3"
+                                          class="w-full bg-transparent border-b-2 border-forest/30 py-2 md:py-3 text-base md:text-lg font-reading focus:outline-none focus:border-ruby transition-colors peer resize-none placeholder-transparent"
+                                          placeholder="Details"></textarea>
+                                <label for="message" class="absolute left-0 top-2 md:top-3 text-black font-editorial uppercase tracking-widest text-xs md:text-sm transition-all peer-focus:-top-4 peer-focus:text-[10px] md:peer-focus:text-xs peer-focus:text-ruby peer-valid:-top-4 peer-valid:text-[10px] md:peer-valid:text-xs peer-not-placeholder-shown:-top-4 peer-not-placeholder-shown:text-[10px] md:peer-not-placeholder-shown:text-xs">
+                                    Details (optional)
+                                </label>
+                            </div>
+
+                            <button type="submit" class="mt-4 md:mt-6 bg-forest text-paper font-editorial uppercase tracking-widest text-base md:text-lg py-4 border-2 border-forest hover:bg-transparent hover:text-forest transition-colors w-full group/btn relative overflow-hidden">
+                                <span class="relative z-10">Send Inquiry</span>
+                                <div class="absolute inset-0 bg-ruby transform scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-300 z-0"></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t-[6px] border-ruby bg-paper pt-16 md:pt-24 pb-8 px-4 md:px-12 lg:px-20 mt-12 relative z-10 text-black">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-16">
+
+            <div class="flex flex-col">
+                <h2 class="font-editorial text-2xl md:text-3xl font-black text-black mb-4 md:mb-6 uppercase tracking-tight">Green Corner</h2>
+                <p class="font-reading text-black md:text-lg mb-6 max-w-sm">
+                    Out of love for nature. Discover the beauty of true, artisanal floristry without compromise.
+                </p>
+                <div class="font-mono text-xs text-black space-y-1 bg-leaf/5 p-4 border-l-2 border-magenta inline-block self-start">
+                    <p>NIP: 7791234567</p>
+                    <p>REGON: 301234567</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <h4 class="font-editorial text-lg md:text-xl font-bold text-black mb-4 md:mb-6 uppercase tracking-[0.15em]">Opening Hours</h4>
+                <ul class="font-mono text-black md:text-sm space-y-3 md:space-y-4">
+                    <li class="flex justify-between border-b border-black/10 pb-2">
+                        <span>Monday – Friday</span>
+                        <span class="font-bold text-black">09:00 – 18:00</span>
+                    </li>
+                    <li class="flex justify-between border-b border-black/10 pb-2 text-black">
+                        <span>Saturday</span>
+                        <span class="font-bold">09:00 – 15:00</span>
+                    </li>
+                    <li class="flex justify-between pb-2">
+                        <span>Sunday</span>
+                        <span>Closed</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col">
+                <h4 class="font-editorial text-lg md:text-xl font-bold text-black mb-4 md:mb-6 uppercase tracking-[0.15em]">Studio</h4>
+                <address class="font-reading text-base md:text-lg text-black not-italic mb-6">
+                    ul. Mickiewicza 24<br>
+                    60-834 Skierniewice, Poland
+                </address>
+                <div class="flex gap-4 font-mono text-sm">
+                    <a href="https://instagram.com" target="_blank" class="text-black hover:text-ruby transition-colors border-b border-transparent hover:border-ruby">Instagram</a>
+                    <a href="https://facebook.com" target="_blank" class="text-black hover:text-ruby transition-colors border-b border-transparent hover:border-ruby">Facebook</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-black/10 font-mono text-[10px] md:text-xs gap-6 text-center md:text-left text-black">
+            <div class="flex flex-col gap-2">
+                <p>&copy; 2026 Florist "Green Corner" Agnieszka Kaczmarek. All rights reserved.</p>
+                <p>Website created by <a href="https://jantokarzewski.pl" class="hover:text-ruby hover:underline transition-colors font-bold">Jan Tokarzewski</a>.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <button type="button" class="hover:text-ruby hover:underline transition-all open-modal uppercase tracking-wider" data-modal="privacyModal">Privacy Policy</button>
+                <button type="button" class="hover:text-ruby hover:underline transition-all open-modal uppercase tracking-wider" data-modal="termsModal">Terms of Service</button>
+                <button type="button" class="hover:text-ruby hover:underline transition-all open-modal uppercase tracking-wider" data-modal="photosModal">Photos</button>
+            </div>
+        </div>
+    </footer>
+
+    <div id="privacyModal" class="fixed inset-0 modal-backdrop z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-paper p-6 md:p-10 max-w-2xl w-full border-t-8 border-ruby relative transform translate-y-8 transition-transform duration-300 modal-content shadow-2xl">
+            <button class="close-modal absolute top-2 right-4 text-4xl font-editorial hover:text-ruby text-forest leading-none cursor-pointer focus:outline-none">&times;</button>
+            <h3 class="font-editorial text-2xl md:text-3xl text-forest mb-4 md:mb-6 italic">Privacy Policy</h3>
+            <div class="font-reading text-base md:text-lg space-y-3 md:space-y-4 max-h-[60vh] overflow-y-auto pr-2 md:pr-4 text-ink/90">
+                <p><strong class="font-bold">1.</strong> The Data Administrator is Florist "Green Corner" Agnieszka Kaczmarek, headquartered at ul. Mickiewicza 24, 60-834 Skierniewice (NIP: 7791234567).</p>
+                <p><strong class="font-bold">2.</strong> Personal data (name, surname, phone number) are processed solely for contact purposes and order fulfillment, based on Article 6(1)(b) of the GDPR.</p>
+                <p><strong class="font-bold">3.</strong> Your data is not transferred to third parties for marketing purposes. We only share it with trusted couriers when using the "Flower delivery" service.</p>
+                <p><strong class="font-bold">4.</strong> You have the right to access, correct, restrict the processing of, and delete your data.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="termsModal" class="fixed inset-0 modal-backdrop z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-paper p-6 md:p-10 max-w-2xl w-full border-t-8 border-magenta relative transform translate-y-8 transition-transform duration-300 modal-content shadow-2xl">
+            <button class="close-modal absolute top-2 right-4 text-4xl font-editorial hover:text-magenta text-forest leading-none cursor-pointer focus:outline-none">&times;</button>
+            <h3 class="font-editorial text-2xl md:text-3xl text-forest mb-4 md:mb-6 italic">Terms of Service</h3>
+            <div class="font-reading text-base md:text-lg space-y-3 md:space-y-4 max-h-[60vh] overflow-y-auto pr-2 md:pr-4 text-ink/90">
+                <p><strong class="font-bold">1. General Provisions:</strong> The florist provides services in preparing original floral arrangements from fresh and dried plants, bypassing repetitive, catalog patterns.</p>
+                <p><strong class="font-bold">2. Seasonality and Substitutions:</strong> Due to natural seasonality, we reserve the right to replace individual flower species with others, maintaining color, form, and value, in case of unavailability of selected varieties at the market.</p>
+                <p><strong class="font-bold">3. Special Orders:</strong> Orders for wedding bouquets and larger events should be placed at least two weeks in advance to guarantee the availability of preferred plant species.</p>
+                <p><strong class="font-bold">4. Complaints:</strong> Complaints regarding the freshness of cut flowers are accepted in person or by phone within 24 hours of receiving or delivering the arrangement.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="photosModal" class="fixed inset-0 modal-backdrop z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-paper p-6 md:p-10 max-w-2xl w-full border-t-8 border-ruby relative transform translate-y-8 transition-transform duration-300 modal-content shadow-2xl">
+            <button class="close-modal absolute top-2 right-4 text-4xl font-editorial hover:text-ruby text-forest leading-none cursor-pointer focus:outline-none">&times;</button>
+            <h3 class="font-editorial text-2xl md:text-3xl text-forest mb-4 md:mb-6 italic">Photos (Unsplash)</h3>
+            <div class="font-reading text-base md:text-lg space-y-6 max-h-[60vh] overflow-y-auto pr-2 md:pr-4 text-ink/90">
+                <p>
+                    "Red rose" by Edward Howell on Unsplash<br>
+                    Photo: <a href="https://unsplash.com/photos/red-rose-flower-eWrJQFRhP88" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/photos/red-rose-flower-eWrJQFRhP88</a><br>
+                    Profile: <a href="https://unsplash.com/@edwardhowellphotography" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/@edwardhowellphotography</a>
+                </p>
+                <p>
+                    "Pink and white flower" by Tanalee Youngblood on Unsplash<br>
+                    Photo: <a href="https://unsplash.com/photos/pink-and-white-flower-kkJuQhp9Kw0" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/photos/pink-and-white-flower-kkJuQhp9Kw0</a><br>
+                    Profile: <a href="https://unsplash.com/@theheartdept" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/@theheartdept</a>
+                </p>
+                <p>
+                    "Elegant wedding table" by Photos by Lanty on Unsplash<br>
+                    Photo: <a href="https://unsplash.com/photos/clear-wine-glass-lot-on-table-O38Id_cyV4M" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/photos/clear-wine-glass-lot-on-table-O38Id_cyV4M</a><br>
+                    Profile: <a href="https://unsplash.com/@photos_by_lanty" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/@photos_by_lanty</a>
+                </p>
+                <p>
+                    "Heart-shaped floral arrangement" by Patrik Svoboda on Unsplash<br>
+                    Photo: <a href="https://unsplash.com/photos/a-heart-shaped-floral-arrangement-with-white-and-purple-flowers-zAeXBk0IxS0" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/photos/a-heart-shaped-floral-arrangement-with-white-and-purple-flowers-zAeXBk0IxS0</a><br>
+                    Profile: <a href="https://unsplash.com/@fredon" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/@fredon</a>
+                </p>
+                <p>
+                    "Red roses in a white ceramic vase" by Christine Sandu on Unsplash<br>
+                    Photo: <a href="https://unsplash.com/photos/red-roses-in-white-ceramic-vase-HvPARWnIEhU" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/photos/red-roses-in-white-ceramic-vase-HvPARWnIEhU</a><br>
+                    Profile: <a href="https://unsplash.com/@lenscapewithme" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/@lenscapewithme</a>
+                </p>
+                <p>
+                    "Pink tulips in a paper bag" by Natali N on Unsplash<br>
+                    Photo: <a href="https://unsplash.com/photos/a-bouquet-of-pink-tulips-in-a-paper-bag-w0BV_ZJU3W0" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/photos/a-bouquet-of-pink-tulips-in-a-paper-bag-w0BV_ZJU3W0</a><br>
+                    Profile: <a href="https://unsplash.com/@nattie_nn" target="_blank" rel="noopener noreferrer" class="hover:text-ruby underline break-all">https://unsplash.com/@nattie_nn</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const form = document.getElementById('contactForm');
+            const successMsg = document.getElementById('formSuccess');
+
+            if(form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const btnText = submitBtn.querySelector('span');
+                    const originalText = btnText.innerText;
+                    btnText.innerText = 'Sending...';
+
+                    setTimeout(() => {
+                        successMsg.classList.remove('opacity-0', 'pointer-events-none');
+
+                        form.reset();
+                        btnText.innerText = originalText;
+
+                        setTimeout(() => {
+                            successMsg.classList.add('opacity-0', 'pointer-events-none');
+                        }, 5000);
+                    }, 800);
+                });
+            }
+
+            const openModalBtns = document.querySelectorAll('.open-modal');
+            const closeBtns = document.querySelectorAll('.close-modal');
+            const modals = document.querySelectorAll('.modal-backdrop');
+
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if(modal) {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        const content = modal.querySelector('.modal-content');
+                        if(content) content.classList.remove('translate-y-8');
+                    }, 20);
+
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeModal(modal) {
+                modal.classList.add('opacity-0');
+                const content = modal.querySelector('.modal-content');
+                if(content) content.classList.add('translate-y-8');
+
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetModal = btn.getAttribute('data-modal');
+                    openModal(targetModal);
+                });
+            });
+
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const modal = e.target.closest('.modal-backdrop');
+                    closeModal(modal);
+                });
+            });
+
+            modals.forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if(e.target === modal) {
+                        closeModal(modal);
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'Escape') {
+                    modals.forEach(modal => {
+                        if(!modal.classList.contains('hidden')) {
+                            closeModal(modal);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

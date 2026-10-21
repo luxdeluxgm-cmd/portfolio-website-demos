@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Włodek's Apiary | Local honey and bee products from Roztocze</title>
+  <meta name="description" content="A demonstration online store for a fictional family apiary from Roztocze: honey, bee pollen, propolis, and gift sets.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#E4A52A">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 46'%3E%3Cpolygon points='20,2 38,12 38,34 20,44 2,34 2,12' fill='%23E4A52A' stroke='%233E2B1B' stroke-width='3'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="apiary/css/style.css">
+
+</head>
+
+<body id="top" class="bg-laka pt-16 font-sans text-[17px] text-kora antialiased md:pt-12">
+  <a href="#tresc" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100000] focus:bg-kora focus:px-4 focus:py-2 focus:text-laka">Skip to content</a>
+
+  <div class="on-dark fixed left-0 top-0 z-[99999] flex h-16 w-full flex-col items-center justify-center gap-2 border-b-2 border-miod bg-kora px-4 text-laka shadow-md md:h-12 md:flex-row md:gap-6">
+    <span class="text-center font-mono text-[10px] uppercase tracking-widest md:text-xs">Sample website</span>
+    <a href="https://jantokarzewski.pl/strony-internetowe" class="bg-laka px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-kora transition-colors hover:bg-miod hover:text-kora md:text-xs">
+      Return
+    </a>
+  </div>
+
+  <div class="on-dark bg-mech-deep text-sm text-laka">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-2 sm:px-8">
+      <p>Portfolio demonstration website. Orders are simulated and will not be fulfilled.</p>
+      <p class="hidden shrink-0 md:block">Free shipping over 150 PLN</p>
+    </div>
+  </div>
+
+  <header class="sticky top-16 z-30 md:top-12 border-b border-kora/15 bg-laka">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
+      <a href="#top" class="flex items-center gap-3" aria-label="Włodek's Apiary, top of the page">
+        <svg viewBox="0 0 40 46" class="h-10 w-9 shrink-0" aria-hidden="true">
+          <polygon points="20,2 38,12 38,34 20,44 2,34 2,12" fill="#E4A52A" stroke="#3E2B1B" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M11 18h18M10 24h20M11 30h18" stroke="#3E2B1B" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <span>
+          <span class="block font-serif text-[1.6rem] font-bold leading-none">Włodek's Apiary</span>
+          <span class="mt-1 hidden text-[13px] text-kora-soft sm:block">Local honey and bee products</span>
+        </span>
+      </a>
+
+      <nav aria-label="Main" class="hidden lg:block">
+        <ul class="flex items-center gap-8 font-semibold">
+          <li><a href="#sklep" data-filter-link="miody" class="underline-offset-8 decoration-2 decoration-miod hover:underline">Our honey</a></li>
+          <li><a href="#sklep" data-filter-link="zdrowie" class="underline-offset-8 decoration-2 decoration-miod hover:underline">For health</a></li>
+          <li><a href="#sklep" data-filter-link="zestawy" class="underline-offset-8 decoration-2 decoration-miod hover:underline">Sets</a></li>
+          <li><a href="#o-nas" class="underline-offset-8 decoration-2 decoration-miod hover:underline">About us</a></li>
+          <li><a href="#kontakt" class="underline-offset-8 decoration-2 decoration-miod hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button id="cart-btn" type="button" aria-haspopup="dialog" class="group inline-flex items-center gap-2 rounded-sm border-2 border-kora px-3 py-2 font-bold transition-colors hover:bg-kora hover:text-laka sm:px-4">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-1.6 10.2a2 2 0 0 1-2 1.8H6.6a2 2 0 0 1-2-1.8L3 9Z"/><path d="M8 9l3-5M16 9l-3-5"/></svg>
+          <span>Cart</span>
+          <span id="cart-count" class="inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-kora px-1.5 text-sm text-laka group-hover:bg-laka group-hover:text-kora">0</span>
+        </button>
+        <button id="menu-btn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-sm border-2 border-kora lg:hidden" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" aria-label="Mobile menu" class="hidden border-t border-kora/15 lg:hidden">
+      <ul class="mx-auto max-w-7xl px-5 py-3 font-semibold sm:px-8">
+        <li><a href="#sklep" data-filter-link="miody" class="block py-2.5">Our honey</a></li>
+        <li><a href="#sklep" data-filter-link="zdrowie" class="block py-2.5">For health</a></li>
+        <li><a href="#sklep" data-filter-link="zestawy" class="block py-2.5">Sets</a></li>
+        <li><a href="#o-nas" class="block py-2.5">About us</a></li>
+        <li><a href="#kontakt" class="block py-2.5">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <noscript><p class="bg-miod-pale px-5 py-3 text-center">The store requires JavaScript to be enabled in order to display products.</p></noscript>
+
+  <main id="tresc">
+    <section class="bg-miod">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:py-20">
+        <div class="lg:col-span-6">
+          <h1 class="font-serif text-5xl font-extrabold leading-[1.03] tracking-[-0.01em] sm:text-6xl lg:text-[4.1rem]">Honey from Roztocze, straight from the beekeeper</h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed">Thirty-eight bee colonies, three generations, and a bottling plant behind the house. We do not heat our honey or mix it with other batches, and we write on each jar where it comes from and when it was harvested.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+            <a href="#sklep" data-filter-link="all" class="btn btn-dark">See our assortment</a>
+            <a href="#o-nas" class="font-bold underline decoration-2 underline-offset-4 hover:decoration-4">Get to know our apiary</a>
+          </div>
+          <p class="mt-6 text-[15px]">We ship on Mondays and Thursdays. Free shipping over 150 PLN.</p>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="hive mx-auto w-full max-w-[560px] lg:mr-0">
+            <div class="hex" style="left:0;top:0;--d:.05s"><img data-photo="hives" data-w="700" fetchpriority="high" alt=""></div>
+            <div class="hex" style="left:40%;top:0;--d:.2s"><img data-photo="beeDipper" data-w="700" alt=""></div>
+            <div class="hex" style="left:20%;top:43.86%;--d:.35s"><img data-photo="dripBowl" data-w="700" alt=""></div>
+            <div class="hex hex-text" style="left:60%;top:43.86%;--d:.5s"><p>Family apiary since 1974</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sklep" class="py-16 lg:py-24" aria-labelledby="sklep-title">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 id="sklep-title" class="font-serif text-4xl font-bold sm:text-5xl">What's in our pantry</h2>
+            <p class="mt-3 max-w-xl text-kora-soft">Everything is from our apiary. The 2026 harvest is already bottled, older vintages are marked on the label.</p>
+          </div>
+          <div id="filters" role="group" aria-label="Product categories" class="flex flex-wrap gap-x-6 gap-y-1 font-semibold">
+            <button type="button" data-filter="all" class="border-b-4 border-transparent py-2 aria-pressed:border-miod" aria-pressed="true">Everything</button>
+            <button type="button" data-filter="miody" class="border-b-4 border-transparent py-2 aria-pressed:border-miod" aria-pressed="false">Our honey</button>
+            <button type="button" data-filter="zdrowie" class="border-b-4 border-transparent py-2 aria-pressed:border-miod" aria-pressed="false">For health</button>
+            <button type="button" data-filter="zestawy" class="border-b-4 border-transparent py-2 aria-pressed:border-miod" aria-pressed="false">Sets</button>
+          </div>
+        </div>
+        <div id="catalog" class="mt-14 space-y-20"></div>
+      </div>
+    </section>
+
+    <section id="o-nas" class="on-dark bg-mech-deep py-16 text-laka lg:py-24" aria-labelledby="o-nas-title">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
+        <figure class="lg:col-span-5">
+          <div class="aspect-[4/5] overflow-hidden bg-mech">
+            <img data-photo="beekeeper" data-w="1000" alt="" class="h-full w-full object-cover" loading="lazy">
+          </div>
+          <figcaption class="mt-3 text-sm text-laka/80">Włodek during a May hive inspection (illustrative photo).</figcaption>
+        </figure>
+
+        <div class="lg:col-span-7 lg:pt-10">
+          <h2 class="font-serif text-4xl font-bold leading-tight sm:text-5xl">The apiary that started with three hives behind the barn</h2>
+          <div class="mt-8 max-w-prose space-y-5 text-lg leading-8 text-laka/90">
+            <p>In 1974, Stanisław, Włodek's grandfather, received three hives from a neighbor and one piece of advice: don't look into them too often. They stood under an old pear tree in a village on the edge of Roztocze, and the honey was given to family for the holidays.</p>
+            <p>Włodek took over the apiary in 1998. He moved the hives to the edge of a fir forest, where linden trees and flower meadows grow, because that's where the bees gather what we like most: linden in July and honeydew in August. Today we have thirty-eight bee colonies and a bottling plant in the old barn.</p>
+            <p>Halina bottles and labels, Marta runs the store and replies to messages, and Włodek still looks into the hives more often than his grandfather advised.</p>
+            <p>We do not heat the honey and do not mix harvests from different years. If last year's jar has crystallized, that's good. That's how it should be.</p>
+          </div>
+          <figure class="mt-12 max-w-xl">
+            <blockquote class="font-serif text-3xl italic leading-snug text-miod-pale sm:text-4xl">"Bees don't like to rush. I only learned this from them after thirty years."</blockquote>
+            <figcaption class="mt-4 font-serif text-xl italic">Włodek</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="kalendarz" class="bg-wosk py-16 lg:py-24" aria-labelledby="kalendarz-title">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-4">
+          <h2 id="kalendarz-title" class="font-serif text-4xl font-bold leading-tight sm:text-5xl">What in which season</h2>
+          <p class="mt-4 max-w-sm text-kora-soft">We don't have every honey all year round. Bees have their calendar and we stick to it.</p>
+        </div>
+        <dl class="divide-y divide-kora/15 border-y border-kora/15 lg:col-span-8">
+          <div class="grid gap-x-6 gap-y-1 py-6 sm:grid-cols-12">
+            <dt class="font-serif text-2xl font-bold sm:col-span-4">April and May</dt>
+            <dd class="leading-relaxed sm:col-span-8">Spring hive inspections. Bees start with willow and dandelion, then the orchards bloom. There's no honey yet, but there is the first pollen, so we set up pollen traps.</dd>
+          </div>
+          <div class="grid gap-x-6 gap-y-1 py-6 sm:grid-cols-12">
+            <dt class="font-serif text-2xl font-bold sm:col-span-4">June</dt>
+            <dd class="leading-relaxed sm:col-span-8">We spin multiflorous honey from meadows and orchards. Each batch tastes different, depending on what was blooming at the time. <button type="button" data-open="wielokwiatowy" class="font-bold underline underline-offset-4">See multiflorous honey</button></dd>
+          </div>
+          <div class="grid gap-x-6 gap-y-1 py-6 sm:grid-cols-12">
+            <dt class="font-serif text-2xl font-bold sm:col-span-4">July</dt>
+            <dd class="leading-relaxed sm:col-span-8">Linden trees bloom for less than two weeks. If the weather is good, we harvest linden honey in the second half of the month. <button type="button" data-open="lipowy" class="font-bold underline underline-offset-4">See linden honey</button></dd>
+          </div>
+          <div class="grid gap-x-6 gap-y-1 py-6 sm:grid-cols-12">
+            <dt class="font-serif text-2xl font-bold sm:col-span-4">August</dt>
+            <dd class="leading-relaxed sm:col-span-8">Honeydew from firs and spruces. Not every year is a honeydew year, so this honey is scarce and disappears quickly. <button type="button" data-open="spadziowy" class="font-bold underline underline-offset-4">See honeydew honey</button></dd>
+          </div>
+          <div class="grid gap-x-6 gap-y-1 py-6 sm:grid-cols-12">
+            <dt class="font-serif text-2xl font-bold sm:col-span-4">September and October</dt>
+            <dd class="leading-relaxed sm:col-span-8">We close the season: we bottle the last batches, collect propolis from the frames, and feed the colonies before winter. <button type="button" data-open="propolis" class="font-bold underline underline-offset-4">See propolis</button></dd>
+          </div>
+          <div class="grid gap-x-6 gap-y-1 py-6 sm:grid-cols-12">
+            <dt class="font-serif text-2xl font-bold sm:col-span-4">Winter</dt>
+            <dd class="leading-relaxed sm:col-span-8">The bees stay in a winter cluster, and we pack sets and reply to messages. <a href="#sklep" data-filter-link="zestawy" class="font-bold underline underline-offset-4">See sets</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="bg-miod-pale py-16 lg:py-20" aria-labelledby="opinie-title">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <h2 id="opinie-title" class="font-serif text-4xl font-bold sm:text-5xl">What our customers write</h2>
+        <div class="mt-10 grid gap-12 md:grid-cols-12">
+          <figure class="md:col-span-7">
+            <blockquote class="font-serif text-2xl italic leading-snug sm:text-3xl">"The linden honey from last summer crystallized exactly as Włodek said in the email. And it was just as good. I'm ordering for the third year in a row."</blockquote>
+            <figcaption class="mt-4 font-semibold">Ewa K., Lublin</figcaption>
+          </figure>
+          <figure class="md:col-span-5 md:mt-20">
+            <blockquote class="font-serif text-2xl italic leading-snug">"I bought the tasting set for my mother-in-law. Now she asks every week if I can get it again."</blockquote>
+            <figcaption class="mt-4 font-semibold">Paweł M., Warsaw</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="py-16 lg:py-24" aria-labelledby="pytania-title">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-7">
+          <h2 id="pytania-title" class="font-serif text-4xl font-bold sm:text-5xl">Frequently asked questions</h2>
+          <div class="mt-8 border-t border-kora/20">
+            <details class="group border-b border-kora/20 py-4">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-xl font-bold [&::-webkit-details-marker]:hidden">How do you pack the jars?
+                <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p class="mt-3 max-w-prose leading-relaxed">Each jar goes into a cardboard insert with wood wool, and we mark the package as glass. If something breaks anyway, we'll send a new jar, just send a picture of the package.</p>
+            </details>
+            <details class="group border-b border-kora/20 py-4">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-xl font-bold [&::-webkit-details-marker]:hidden">When do you ship orders?
+                <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p class="mt-3 max-w-prose leading-relaxed">On Mondays and Thursdays, by courier or to a parcel locker. The package usually takes one or two business days. Orders over 150 PLN are shipped for free.</p>
+            </details>
+            <details class="group border-b border-kora/20 py-4">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-xl font-bold [&::-webkit-details-marker]:hidden">The honey has crystallized. Is it spoiled?
+                <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p class="mt-3 max-w-prose leading-relaxed">No, crystallization is natural and means the honey hasn't been heated. If you prefer liquid, place the closed jar in warm water, but no higher than 40°C, and wait a dozen minutes.</p>
+            </details>
+            <details class="group border-b border-kora/20 py-4">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-xl font-bold [&::-webkit-details-marker]:hidden">Can I pick up my order at the apiary?
+                <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <p class="mt-3 max-w-prose leading-relaxed">Yes, on Saturdays from 9:00 to 13:00, by prior appointment. Choose personal pickup when placing your order, and Marta will get in touch with a confirmation.</p>
+            </details>
+          </div>
+        </div>
+
+        <aside class="on-dark bg-mech-deep p-8 text-laka lg:col-span-5 lg:self-start" aria-labelledby="kontakt-title">
+          <h2 id="kontakt-title" class="font-serif text-3xl font-bold">Write or call us</h2>
+          <p class="mt-3 text-laka/90">Marta replies to messages, usually on the same day.</p>
+          <address class="mt-6 space-y-3 not-italic">
+            <p>Włodek's Apiary<br>ul. Pasieczna 7, Roztocze<br><span class="text-sm text-laka/80">(fictional address)</span></p>
+            <p>tel. <a href="tel:+48500000000" class="underline underline-offset-4">+48 500 000 000</a></p>
+            <p><a href="mailto:kontakt@pasieka-u-wlodka.example" class="underline underline-offset-4">kontakt@pasieka-u-wlodka.example</a></p>
+          </address>
+          <p class="mt-6 text-laka/90">Personal pickup: Saturdays 9:00 to 13:00, by prior appointment.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="zdjecia" class="bg-wosk py-16" aria-labelledby="zdjecia-title">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-4">
+          <h2 id="zdjecia-title" class="font-serif text-4xl font-bold">Photos</h2>
+          <p class="mt-3 max-w-sm text-kora-soft">All photographs in this store come from Unsplash and are used according to the Unsplash license. Thank you to the authors for their work.</p>
+        </div>
+        <ul id="credits" class="grid gap-x-8 gap-y-4 text-[15px] sm:grid-cols-2 lg:col-span-8"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="on-dark bg-mech-deep text-laka">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <p class="font-serif text-3xl font-bold">Włodek's Apiary</p>
+        <p class="mt-3 max-w-sm text-laka/90">Local honey and bee products from Roztocze. Family apiary since 1974.</p>
+      </div>
+      <nav class="md:col-span-3" aria-label="Store in footer">
+        <p class="font-serif text-xl font-bold">Store</p>
+        <ul class="mt-3 space-y-2">
+          <li><a href="#sklep" data-filter-link="miody" class="underline decoration-laka/40 underline-offset-4 hover:decoration-laka">Our honey</a></li>
+          <li><a href="#sklep" data-filter-link="zdrowie" class="underline decoration-laka/40 underline-offset-4 hover:decoration-laka">For health</a></li>
+          <li><a href="#sklep" data-filter-link="zestawy" class="underline decoration-laka/40 underline-offset-4 hover:decoration-laka">Sets</a></li>
+        </ul>
+      </nav>
+      <nav class="md:col-span-4" aria-label="Apiary in footer">
+        <p class="font-serif text-xl font-bold">Apiary</p>
+        <ul class="mt-3 space-y-2">
+          <li><a href="#o-nas" class="underline decoration-laka/40 underline-offset-4 hover:decoration-laka">About us</a></li>
+          <li><a href="#kalendarz" class="underline decoration-laka/40 underline-offset-4 hover:decoration-laka">What in which season</a></li>
+          <li><a href="#kontakt" class="underline decoration-laka/40 underline-offset-4 hover:decoration-laka">Questions and contact</a></li>
+          <li><a href="#zdjecia" class="underline decoration-laka/40 underline-offset-4 hover:decoration-laka">Photos and authors</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-laka/20">
+      <div class="mx-auto max-w-7xl space-y-2 px-5 py-6 text-sm text-laka/85 sm:px-8">
+        <p>Bee products are food items and are not medicines. In case of allergy to bee products, consult a doctor.</p>
+        <p>Website prepared by <a href="https://jantokarzewski.pl" class="font-bold underline decoration-laka/40 underline-offset-4 hover:decoration-laka">Jan Tokarzewski</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-5 left-1/2 z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 translate-y-3 rounded-sm bg-kora px-4 py-3 text-center text-laka opacity-0 transition duration-200"></div>
+
+  <dialog id="product" aria-labelledby="product-title" class="max-h-[calc(100dvh-1.5rem)] w-[min(62rem,calc(100%-1.5rem))] overflow-y-auto rounded-sm bg-wosk p-0 text-kora backdrop:bg-kora/60">
+    <div class="relative">
+      <button type="button" data-close class="absolute right-3 top-3 z-10 inline-flex h-11 w-11 items-center justify-center rounded-sm bg-wosk text-kora hover:bg-miod-pale" aria-label="Close product window">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div id="product-body"></div>
+    </div>
+  </dialog>
+
+  <dialog id="cart" aria-labelledby="cart-title" class="drawer m-0 ml-auto h-full max-h-none w-full max-w-md bg-wosk p-0 text-kora backdrop:bg-kora/60">
+    <div class="flex h-full flex-col">
+      <div class="flex items-center justify-between gap-4 border-b border-kora/15 px-6 py-5">
+        <div>
+          <h2 id="cart-title" class="font-serif text-3xl font-bold leading-none">Your cart</h2>
+          <p id="cart-sub" class="mt-1 text-sm text-kora-soft"></p>
+        </div>
+        <button type="button" data-close class="inline-flex h-11 w-11 items-center justify-center rounded-sm hover:bg-miod-pale" aria-label="Close cart">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div id="cart-items" class="flex-1 overflow-y-auto px-6"></div>
+      <div id="cart-footer" class="border-t border-kora/15 px-6 py-5"></div>
+    </div>
+  </dialog>
+
+  <dialog id="checkout" aria-labelledby="checkout-title" class="max-h-[calc(100dvh-1.5rem)] w-[min(60rem,calc(100%-1.5rem))] overflow-y-auto rounded-sm bg-wosk p-0 text-kora backdrop:bg-kora/60">
+    <div class="relative">
+      <button type="button" data-close class="absolute right-3 top-3 z-10 inline-flex h-11 w-11 items-center justify-center rounded-sm hover:bg-miod-pale" aria-label="Close order window">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div id="checkout-body"></div>
+    </div>
+  </dialog>
+
+  <script>
+  (() => {
+    'use strict';
+
+    const $  = (s, r = document) => r.querySelector(s); 
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const money = c => new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(c / 100);
+    const esc = s => String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+    const plural = (n, [one, few, many]) =>
+      n === 1 ? one : (n % 10 >= 2 && n % 10 <= 4 && !(n % 100 >= 12 && n % 100 <= 14)) ? few : many;
+
+
+    const PHOTOS = {
+      dripBowl:   { src: 'photo-1771405317876-616a62efd97e', page: 'EE9Qs3p16Ng', author: 'Madeline Liu',        handle: 'madeline_sd',   alt: 'Golden honey dripping from a wooden dipper into a bowl' },
+      hives:      { src: 'photo-1693225428299-996f236f239f', page: 'IeRTGrMPS6g', author: 'micheile henderson',  handle: 'micheile',      alt: 'A row of hives in a meadow, trees in the background' },
+      beeDipper:  { src: 'photo-1761485172756-389ac9bf5b4f', page: 'MSxbB7TGmQQ', author: 'Reinhard A. Deutsch', handle: 'rabaukenhai',   alt: 'A bee on a wooden dipper in a honey pot' },
+      dipperComb: { src: 'photo-1573697610008-4c72b4e9508f', page: 'nesUgwNX3u4', author: 'Alexander Mils',      handle: 'alexandermils', alt: 'Wooden dipper on a honeycomb' },
+      jarComb:    { src: 'photo-1558642452-9d2a7deb7f62',    page: 'yQzrDgU-KAI', author: 'Arwin Neil Baichoo',  handle: 'arwinneil',     alt: 'A jar of honey and a honeycomb' },
+      dripMug:    { src: 'photo-1771405317858-fa2d404b6d71', page: 'iysVyioGP9w', author: 'Madeline Liu',        handle: 'madeline_sd',   alt: 'Honey dripping from a dipper into a white mug' },
+      combPine:   { src: 'photo-1676313743536-291c818a5096', page: '2QxUvL-o_CE', author: 'Bermix Studio',       handle: 'bermixstudio',  alt: 'Honeycombs and pine cones on a wooden table' },
+      combSpoon:  { src: 'photo-1676313743558-009a9ebba3bf', page: 'zV0yp9H8j4g', author: 'Bermix Studio',       handle: 'bermixstudio',  alt: 'Honeycombs and a wooden spoon on a table' },
+      board:      { src: 'photo-1743193144224-d2db90ea7784', page: '1jlAsDAMhms', author: 'Marco Palumbo',       handle: 'sapporo2025',   alt: 'Cheese, bread, and honey on a wooden board' },
+      pollenBee:  { src: 'photo-1609160946914-4feec02cb1e9', page: 'guhWHcdONOU', author: 'Kieran Murphy',       handle: 'kfionnm',       alt: 'A bee with a full pollen basket over a primrose' },
+      beeComb:    { src: 'photo-1627515795375-8a6010609c53', page: 'tDf7CUhYKzg', author: 'Meggyn Pomerleau',    handle: 'yungserif',     alt: 'A bee on a honeycomb' },
+      blossom:    { src: 'photo-1777458447467-d03993b8b6f5', page: 'H6O9wEjIZHc', author: 'Pascal Debrunner',    handle: 'debrupas',      alt: 'A bee collecting nectar from an apple blossom' },
+      beekeeper:  { src: 'photo-1758522966287-df92946a4e23', page: 'c6Fmsr00R-c', author: 'Vitaly Gariev',       handle: 'silverkblack',  alt: 'A beekeeper in a protective net in a blooming field' }
+    };
+    const UTM = '?utm_source=pasieka_u_wlodka_demo&utm_medium=referral';
+    const sizeFor = w => (w > 900 ? 1200 : 800);
+    const IMG_DIR = 'apiary/img/';
+    const photoUrl = (key, w = 800) => `${IMG_DIR}${key}-${sizeFor(w)}.webp`;
+    const remoteUrl = (key, w) => `https://images.unsplash.com/${PHOTOS[key].src}?auto=format&fit=max&w=${w}&q=75`;
+
+    const STORAGE_HONEY = 'Store at room temperature, away from light. Crystallized honey can be heated in a water bath, no higher than 40°C.';
+    const CATS = [
+      { id: 'miody',   title: 'Our honey', intro: 'Three harvests a year, each bottled separately. No heating and no mixing of vintages.' },
+      { id: 'zdrowie', title: 'For health', intro: 'Pollen and propolis from our hives. These are food products, not medicines. In case of allergy to bee products, ask a doctor.' },
+      { id: 'zestawy', title: 'Sets',     intro: 'We pack in paper and wood wool, so the jars arrive intact. Good for a gift.' }
+    ];
+    const PRODUCTS = [
+      { id: 'wielokwiatowy', cat: 'miody', name: 'Multiflorous honey', tag: 'Harvest from June 2026', photo: 'jarComb',
+        short: 'Mild and floral, from the meadows and orchards around the apiary.',
+        long: 'Bees collect it from dandelion, clover, raspberries, and apples, so each batch tastes a bit different. Good for every day: in tea, cottage cheese, and bread with butter. After a few months, it crystallizes finely and cream-like.',
+        ingredients: '100% bee honey.', storage: STORAGE_HONEY,
+        variants: [{ label: '400 g', price: 2800 }, { label: '900 g', price: 5200 }] },
+      { id: 'lipowy', cat: 'miody', name: 'Linden honey', tag: 'Harvest from July 2026', photo: 'dripMug',
+        short: 'Bright and aromatic, from the linden alley behind the apiary.',
+        long: 'Smells of linden and a bit of mint. It is light yellow, and almost white after crystallization. It is chosen by those who like a distinct honey aroma, preferably with warm milk or tea.',
+        ingredients: '100% bee honey.', storage: STORAGE_HONEY,
+        variants: [{ label: '400 g', price: 3400 }, { label: '900 g', price: 6400 }] },
+      { id: 'spadziowy', cat: 'miody', name: 'Coniferous honeydew honey', tag: 'Harvest from August 2026, limited quantity', photo: 'combPine',
+        short: 'Dark and resinous, from the fir forests of Roztocze.',
+        long: 'Bees collect honeydew from firs and spruces, which is why the honey is dark, less sweet, and slightly resinous. It stays liquid for a long time. In some years there is no honeydew at all, so the supply is limited.',
+        ingredients: '100% bee honey.', storage: STORAGE_HONEY,
+        variants: [{ label: '400 g', price: 3800 }, { label: '900 g', price: 7200 }] },
+      { id: 'czerpak', cat: 'miody', name: 'Wooden dipper', tag: 'Handmade by Włodek\'s neighbor', photo: 'dipperComb',
+        short: 'Turned from beech wood, oiled, 18 cm.',
+        long: 'A dipper made of beech wood, without varnish, protected with linseed oil. Every drop flows off it, and the honey does not stick to the handle. Each piece has a slightly different grain color.',
+        ingredients: 'Beech wood, linseed oil.', storage: 'Wash with warm water, not in the dishwasher. Rub with linseed oil from time to time.',
+        variants: [{ label: '18 cm', price: 2400 }] },
+
+      { id: 'pylek', cat: 'zdrowie', name: 'Bee pollen', tag: 'Harvest from May and June 2026', photo: 'pollenBee',
+        short: 'Dried at low temperature, sold in glass.',
+        long: 'Colorful granules from pollen traps, collected in May and June. We dry them at a temperature below 40°C. Add to oatmeal or yogurt, or eat a teaspoon in the morning. People allergic to plant pollen should consult a doctor first.',
+        ingredients: '100% bee pollen.', storage: 'In a dry, dark place. After opening, preferably in the refrigerator.',
+        variants: [{ label: '150 g', price: 3200 }, { label: '300 g', price: 5800 }] },
+      { id: 'propolis', cat: 'zdrowie', name: 'Propolis tincture', tag: 'From the frames of our hives', photo: 'beeComb',
+        short: 'Extract in a dark bottle with a pipette.',
+        long: 'We collect propolis from the frames after the season and macerate it in alcohol for four weeks. It smells like resin, and the taste is intense and slightly burning. Use according to the label and do not give to children. This is a food product, not a medicine.',
+        ingredients: 'Propolis, food-grade ethyl alcohol.', storage: 'In a dark bottle, at room temperature.',
+        variants: [{ label: '30 ml', price: 2900 }, { label: '50 ml', price: 4400 }] },
+
+      { id: 'degustacyjny', cat: 'zestawy', name: '"Three Honeys" tasting set', tag: 'Good for a start', photo: 'board',
+        short: 'Multiflorous, linden, and honeydew in small jars.',
+        long: 'Three of our honeys in 250 g jars to compare them side by side. Try it on a slice of bread or on a teaspoon, without additions, and you will taste the difference. The set includes a card with a short description of each harvest.',
+        ingredients: 'Multiflorous honey, linden honey, and honeydew honey, 250 g each.', storage: STORAGE_HONEY,
+        variants: [{ label: '3 × 250 g', price: 7900 }] },
+      { id: 'prezentowy', cat: 'zestawy', name: 'Gift set with a dipper', tag: 'In a wooden box', photo: 'combSpoon',
+        short: 'Two honeys and a dipper, packed as a gift.',
+        long: 'Multiflorous honey and linden honey 400 g each, and a wooden dipper, arranged in a box with wood wool. Ready to hand over, no need to buy anything extra.',
+        ingredients: 'Multiflorous honey 400 g, linden honey 400 g, beech wood dipper, wooden box.', storage: 'Like individual products.',
+        variants: [{ label: 'set', price: 9800 }] },
+      { id: 'pszczelarza', cat: 'zestawy', name: 'Beekeeper\'s set', tag: 'What we have in our own cupboard', photo: 'blossom',
+        short: 'Linden honey, pollen, and propolis for autumn.',
+        long: 'Three things we reach for when it gets colder: linden honey, bee pollen, and propolis tincture. Cheaper than buying them separately.',
+        ingredients: 'Linden honey 400 g, bee pollen 150 g, propolis (tincture) 30 ml.', storage: 'Like individual products.',
+        variants: [{ label: 'set', price: 8900 }] }
+    ];
+    const byId = id => PRODUCTS.find(p => p.id === id);
+
+    const FREE_FROM = 15000;
+    const DELIVERY = [
+      { id: 'kurier',    label: 'Courier',                   note: '1 to 2 business days',     price: 1600 },
+      { id: 'paczkomat', label: 'Parcel locker',             note: '1 to 2 business days',     price: 1300 },
+      { id: 'odbior',    label: 'Personal pickup at the apiary', note: 'Saturdays 9:00 to 13:00', price: 0 }
+    ];
+    const deliveryCost = (id, sub) => { const d = DELIVERY.find(x => x.id === id); return !d || d.price === 0 || sub >= FREE_FROM ? 0 : d.price; };
+
+    const KEY = 'pasieka-demo-koszyk-v1';
+    const state = { filter: 'all', cart: loadCart() };
+
+    function loadCart() {
+      try {
+        const arr = JSON.parse(localStorage.getItem(KEY) || '[]');
+        return Array.isArray(arr) ? arr.filter(i => byId(i.id) && byId(i.id).variants[i.v] && i.q > 0) : [];
+      } catch { return []; }
+    }
+    function saveCart() { try { localStorage.setItem(KEY, JSON.stringify(state.cart)); } catch { } }
+
+    const line = i => byId(i.id).variants[i.v].price * i.q;
+    const subtotal = () => state.cart.reduce((s, i) => s + line(i), 0);
+    const itemCount = () => state.cart.reduce((s, i) => s + i.q, 0);
+
+    function addToCart(id, v, q = 1) {
+      const p = byId(id);
+      if (!p || !p.variants[v]) return;
+      const found = state.cart.find(i => i.id === id && i.v === v);
+      if (found) found.q = Math.min(20, found.q + q); else state.cart.push({ id, v, q: Math.min(20, q) });
+      saveCart(); renderCart();
+      toast(`Added to cart: ${p.name} (${p.variants[v].label})`);
+    }
+    function changeQty(id, v, delta) {
+      const it = state.cart.find(i => i.id === id && i.v === v);
+      if (!it) return;
+      it.q = Math.min(20, it.q + delta);
+      if (it.q <= 0) state.cart = state.cart.filter(i => i !== it);
+      saveCart(); renderCart();
+    }
+    function removeItem(id, v) {
+      state.cart = state.cart.filter(i => !(i.id === id && i.v === v));
+      saveCart(); renderCart();
+    }
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast');
+      t.textContent = msg;
+      t.classList.remove('opacity-0', 'translate-y-3');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.add('opacity-0', 'translate-y-3'), 2600);
+    }
+
+    function fixOrphans(root) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: n => /^(SCRIPT|STYLE|TEXTAREA)$/.test(n.parentNode.nodeName) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+      });
+      const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(n => { n.nodeValue = n.nodeValue.replace(/(^|[\s(„])([aiouwzAIOUWZ])\s+(?=\S)/g, '$1$2\u00A0'); });
+    }
+
+    function card(p) {
+      const multi = p.variants.length > 1;
+      return `
+      <article data-card="${p.id}" class="flex flex-col">
+        <button type="button" data-open="${p.id}" class="block text-left" tabindex="-1" aria-hidden="true">
+          <div class="aspect-[4/5] overflow-hidden bg-miod-pale">
+            <img src="${photoUrl(p.photo, 640)}" alt="${esc(PHOTOS[p.photo].alt)}" width="640" height="800" loading="lazy" class="h-full w-full object-cover">
+          </div>
+        </button>
+        <div class="mt-4 flex-1">
+          <p class="text-sm font-semibold text-mech">${esc(p.tag)}</p>
+          <h4 class="mt-1 font-serif text-2xl font-bold leading-tight"><button type="button" data-open="${p.id}" class="text-left hover:underline decoration-2 decoration-miod underline-offset-4">${esc(p.name)}</button></h4>
+          <p class="mt-2 text-[15px] leading-relaxed text-kora-soft">${esc(p.short)}</p>
+        </div>
+        <div class="mt-4 flex items-end justify-between gap-3">
+          <div>
+            ${multi
+              ? `<label class="sr-only" for="v-${p.id}">Select variant: ${esc(p.name)}</label>
+                 <select id="v-${p.id}" data-variant-select class="rounded-sm border border-kora/40 bg-wosk px-2 py-1.5 text-sm">
+                   ${p.variants.map((v, i) => `<option value="${i}">${esc(v.label)}</option>`).join('')}
+                 </select>`
+              : `<p class="text-sm text-kora-soft">${esc(p.variants[0].label)}</p>`}
+            <p data-price class="mt-1 font-serif text-2xl font-bold">${money(p.variants[0].price)}</p>
+          </div>
+          <button type="button" data-add="${p.id}" class="btn btn-dark px-4 py-2.5 text-[15px]">Add to cart</button>
+        </div>
+      </article>`;
+    }
+
+    function renderCatalog() {
+      const root = $('#catalog');
+      root.innerHTML = CATS.filter(c => state.filter === 'all' || state.filter === c.id).map(c => `
+        <section aria-labelledby="cat-${c.id}" class="lg:grid lg:grid-cols-12 lg:gap-10">
+          <header class="mb-8 lg:col-span-3 lg:mb-0">
+            <div class="lg:sticky lg:top-40">
+              <h3 id="cat-${c.id}" class="font-serif text-3xl font-bold">${c.title}</h3>
+              <p class="mt-3 max-w-xs leading-relaxed text-kora-soft">${c.intro}</p>
+            </div>
+          </header>
+          <div class="grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-3 lg:col-span-9">
+            ${PRODUCTS.filter(p => p.cat === c.id).map(card).join('')}
+          </div>
+        </section>`).join('');
+      fixOrphans(root);
+    }
+
+    function setFilter(f) {
+      state.filter = f;
+      $$('#filters [data-filter]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === f)));
+      renderCatalog();
+    }
+
+    function openDialog(dlg) {
+      if (!dlg.open) dlg.showModal();
+      document.documentElement.classList.add('lock');
+    }
+    $$('dialog').forEach(dlg => {
+      dlg.addEventListener('close', () => { if (!$('dialog[open]')) document.documentElement.classList.remove('lock'); });
+      dlg.addEventListener('click', e => {
+        if (e.target !== dlg) return;
+        const r = dlg.getBoundingClientRect();
+        const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+        if (!inside) dlg.close();
+      });
+    });
+
+    function openProduct(id) {
+      const p = byId(id); if (!p) return;
+      const multi = p.variants.length > 1;
+      $('#product-body').innerHTML = `
+        <div class="grid md:grid-cols-2">
+          <div class="aspect-[4/5] bg-miod-pale md:aspect-auto md:min-h-[560px]">
+            <img src="${photoUrl(p.photo, 1000)}" alt="${esc(PHOTOS[p.photo].alt)}" class="h-full w-full object-cover">
+          </div>
+          <div class="flex flex-col p-6 sm:p-8">
+            <p class="pr-10 text-sm font-semibold text-mech">${esc(p.tag)}</p>
+            <h2 id="product-title" class="mt-1 font-serif text-4xl font-bold leading-tight">${esc(p.name)}</h2>
+            <p class="mt-5 leading-relaxed">${esc(p.long)}</p>
+            <dl class="mt-5 space-y-2 text-[15px] leading-relaxed">
+              <div><dt class="inline font-bold">Ingredients: </dt><dd class="inline">${esc(p.ingredients)}</dd></div>
+              <div><dt class="inline font-bold">Storage: </dt><dd class="inline">${esc(p.storage)}</dd></div>
+            </dl>
+            <div class="mt-auto pt-8">
+              <p id="pd-price" class="font-serif text-3xl font-bold">${money(p.variants[0].price)}</p>
+              <div class="mt-4 flex flex-wrap items-end gap-4">
+                ${multi ? `<label class="block"><span class="mb-1 block text-sm font-semibold">Variant</span>
+                  <select id="pd-variant" class="field w-auto">${p.variants.map((v, i) => `<option value="${i}">${esc(v.label)}</option>`).join('')}</select></label>`
+                  : `<p class="pb-2.5 text-kora-soft">${esc(p.variants[0].label)}</p>`}
+                <label class="block"><span class="mb-1 block text-sm font-semibold">Quantity</span>
+                  <input id="pd-qty" type="number" min="1" max="20" value="1" inputmode="numeric" class="field w-20"></label>
+                <button type="button" data-dlg-add="${p.id}" class="btn btn-dark">Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      fixOrphans($('#product-body'));
+      openDialog($('#product'));
+    }
+
+    function renderCart() {
+      const n = itemCount();
+      $('#cart-count').textContent = n;
+      $('#cart-btn').setAttribute('aria-label', `Cart, ${n} ${plural(n, ['piece', 'pieces', 'pieces'])}`);
+      $('#cart-sub').textContent = n ? `${n} ${plural(n, ['piece', 'pieces', 'pieces'])} in cart` : '';
+
+      const items = $('#cart-items'), foot = $('#cart-footer');
+      if (!state.cart.length) {
+        items.innerHTML = `
+          <div class="py-12">
+            <p class="font-serif text-2xl font-bold">Your cart is empty</p>
+            <p class="mt-2 leading-relaxed text-kora-soft">To start, we recommend linden honey from this year's harvest or the tasting set.</p>
+            <a href="#sklep" data-close class="btn btn-dark mt-6">Return to store</a>
+          </div>`;
+        foot.classList.add('hidden');
+        return;
+      }
+      foot.classList.remove('hidden');
+      items.innerHTML = `<ul>${state.cart.map(i => {
+        const p = byId(i.id), v = p.variants[i.v];
+        return `
+        <li class="flex gap-4 border-b border-kora/15 py-5">
+          <img src="${photoUrl(p.photo, 200)}" alt="" width="64" height="80" class="h-20 w-16 shrink-0 bg-miod-pale object-cover">
+          <div class="min-w-0 flex-1">
+            <p class="font-serif text-lg font-bold leading-tight">${esc(p.name)}</p>
+            <p class="text-sm text-kora-soft">${esc(v.label)}, ${money(v.price)} each</p>
+            <div class="mt-3 flex items-center gap-4">
+              <div class="inline-flex items-center rounded-sm border border-kora/30">
+                <button type="button" data-dec data-id="${i.id}" data-v="${i.v}" class="h-9 w-9 text-lg hover:bg-miod-pale" aria-label="Decrease quantity: ${esc(p.name)}">−</button>
+                <span class="w-8 text-center font-semibold" aria-live="polite">${i.q}</span>
+                <button type="button" data-inc data-id="${i.id}" data-v="${i.v}" class="h-9 w-9 text-lg hover:bg-miod-pale" aria-label="Increase quantity: ${esc(p.name)}">+</button>
+              </div>
+              <button type="button" data-remove data-id="${i.id}" data-v="${i.v}" class="text-sm underline underline-offset-4">Remove</button>
+            </div>
+          </div>
+          <p class="whitespace-nowrap font-bold">${money(line(i))}</p>
+        </li>`;
+      }).join('')}</ul>`;
+
+      const sub = subtotal(), left = FREE_FROM - sub;
+      const pct = Math.min(100, Math.round(sub / FREE_FROM * 100));
+      foot.innerHTML = `
+        <p class="text-sm">${left > 0 ? `${money(left)} left for free shipping.` : 'Shipping by courier and to a parcel locker is free with us.'}</p>
+        <div class="mt-2 h-1.5 bg-kora/15"><div class="h-full bg-mech" style="width:${pct}%"></div></div>
+        <div class="mt-4 flex items-baseline justify-between text-lg font-bold"><span>Products value</span><span>${money(sub)}</span></div>
+        <p class="mt-1 text-sm text-kora-soft">You will see the delivery cost in the next step.</p>
+        <button type="button" id="go-checkout" class="btn btn-dark mt-4 w-full">Go to checkout</button>`;
+      fixOrphans(foot);
+    }
+
+    function openCart() { renderCart(); openDialog($('#cart')); }
+
+    function renderCheckout() {
+      const sub = subtotal();
+      $('#checkout-body').innerHTML = `
+      <div class="grid md:grid-cols-5">
+        <form id="checkout-form" class="p-6 sm:p-8 md:col-span-3">
+          <h2 id="checkout-title" class="pr-10 font-serif text-4xl font-bold leading-tight">Order</h2>
+          <p class="mt-2 text-kora-soft">Fill in the details to see what the last step looks like. Nothing will be shipped.</p>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">First and last name</span><input class="field" name="name" autocomplete="name" required></label>
+            <label class="block"><span class="mb-1 block text-sm font-semibold">E-mail</span><input class="field" type="email" name="email" autocomplete="email" required></label>
+            <label class="block"><span class="mb-1 block text-sm font-semibold">Phone (for the courier)</span><input class="field" type="tel" name="phone" autocomplete="tel"></label>
+            <label class="block sm:col-span-2"><span class="mb-1 block text-sm font-semibold">Street and house number</span><input class="field" name="street" autocomplete="street-address" required></label>
+            <label class="block"><span class="mb-1 block text-sm font-semibold">Postal code</span><input class="field" name="zip" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{2}-[0-9]{3}" placeholder="00-000" title="Format: 00-000" required></label>
+            <label class="block"><span class="mb-1 block text-sm font-semibold">City</span><input class="field" name="city" autocomplete="address-level2" required></label>
+          </div>
+
+          <fieldset class="mt-6">
+            <legend class="mb-2 font-serif text-xl font-bold">Delivery</legend>
+            <div class="space-y-2">
+              ${DELIVERY.map((d, i) => `
+              <label class="flex cursor-pointer items-center gap-3 rounded-sm border border-kora/25 px-4 py-3 has-[:checked]:border-kora has-[:checked]:bg-miod-pale/60">
+                <input type="radio" name="delivery" value="${d.id}" class="h-4 w-4 accent-mech-deep" ${i === 0 ? 'checked' : ''}>
+                <span class="flex-1"><span class="block font-semibold">${d.label}</span><span class="block text-sm text-kora-soft">${d.note}</span></span>
+                <span class="font-semibold">${deliveryCost(d.id, sub) === 0 ? 'Free' : money(deliveryCost(d.id, sub))}</span>
+              </label>`).join('')}
+            </div>
+          </fieldset>
+
+          <fieldset class="mt-6">
+            <legend class="mb-2 font-serif text-xl font-bold">Payment</legend>
+            <div class="grid gap-2 sm:grid-cols-3">
+              ${['BLIK', 'Fast transfer', 'Card'].map((m, i) => `
+              <label class="flex cursor-pointer items-center gap-3 rounded-sm border border-kora/25 px-4 py-3 has-[:checked]:border-kora has-[:checked]:bg-miod-pale/60">
+                <input type="radio" name="payment" value="${m}" class="h-4 w-4 accent-mech-deep" ${i === 0 ? 'checked' : ''}><span class="font-semibold">${m}</span>
+              </label>`).join('')}
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-dark mt-8 w-full sm:w-auto">Place order (demo)</button>
+          <p class="mt-3 text-sm text-kora-soft">Payment will not be collected, and your data will not leave your browser.</p>
+        </form>
+
+        <aside class="bg-miod-pale/50 p-6 sm:p-8 md:col-span-2" aria-label="Order summary">
+          <h3 class="font-serif text-2xl font-bold">Your order</h3>
+          <ul class="mt-4 divide-y divide-kora/15">
+            ${state.cart.map(i => { const p = byId(i.id), v = p.variants[i.v]; return `
+              <li class="flex justify-between gap-4 py-3 text-[15px]">
+                <span>${esc(p.name)}<span class="block text-kora-soft">${esc(v.label)}, ${i.q} ${plural(i.q, ['piece', 'pieces', 'pieces'])}</span></span>
+                <span class="whitespace-nowrap font-semibold">${money(line(i))}</span>
+              </li>`; }).join('')}
+          </ul>
+          <dl id="co-totals" class="mt-4 space-y-2 border-t border-kora/30 pt-4"></dl>
+        </aside>
+      </div>`;
+      updateTotals();
+      fixOrphans($('#checkout-body'));
+    }
+
+    function updateTotals() {
+      const form = $('#checkout-form'); if (!form) return;
+      const sub = subtotal();
+      const dId = form.elements.delivery.value;
+      const ship = deliveryCost(dId, sub);
+      $('#co-totals').innerHTML = `
+        <div class="flex justify-between"><dt>Products</dt><dd>${money(sub)}</dd></div>
+        <div class="flex justify-between"><dt>Delivery</dt><dd>${ship === 0 ? 'Free' : money(ship)}</dd></div>
+        <div class="flex justify-between pt-2 font-serif text-2xl font-bold"><dt>Total</dt><dd>${money(sub + ship)}</dd></div>`;
+    }
+
+    function openCheckout() {
+      if (!state.cart.length) return;
+      $('#cart').close();
+      renderCheckout();
+      openDialog($('#checkout'));
+    }
+
+    document.addEventListener('click', e => {
+      const t = e.target;
+      const open = t.closest('[data-open]');
+      if (open) { const dlg = open.closest('dialog'); if (dlg) dlg.close(); openProduct(open.dataset.open); return; }
+
+      const add = t.closest('[data-add]');
+      if (add) {
+        const sel = $('[data-variant-select]', add.closest('[data-card]'));
+        addToCart(add.dataset.add, sel ? Number(sel.value) : 0);
+        return;
+      }
+
+      const dAdd = t.closest('[data-dlg-add]');
+      if (dAdd) {
+        const v = $('#pd-variant') ? Number($('#pd-variant').value) : 0;
+        const q = Math.max(1, Math.min(20, parseInt($('#pd-qty').value, 10) || 1));
+        $('#product').close();
+        addToCart(dAdd.dataset.dlgAdd, v, q);
+        return;
+      }
+
+      const close = t.closest('[data-close]');
+      if (close) { const dlg = close.closest('dialog'); if (dlg) dlg.close(); return; }
+
+      const fl = t.closest('[data-filter-link]');
+      if (fl) { setFilter(fl.dataset.filterLink); $('#mobile-nav').classList.add('hidden'); $('#menu-btn').setAttribute('aria-expanded', 'false'); return; }
+
+      const f = t.closest('[data-filter]');
+      if (f) { setFilter(f.dataset.filter); return; }
+
+      const inc = t.closest('[data-inc]');
+      if (inc) { changeQty(inc.dataset.id, Number(inc.dataset.v), 1); return; }
+      const dec = t.closest('[data-dec]');
+      if (dec) { changeQty(dec.dataset.id, Number(dec.dataset.v), -1); return; }
+      const rem = t.closest('[data-remove]');
+      if (rem) { removeItem(rem.dataset.id, Number(rem.dataset.v)); return; }
+
+      if (t.closest('#cart-btn')) { openCart(); return; }
+      if (t.closest('#go-checkout')) { openCheckout(); return; }
+    });
+
+    document.addEventListener('change', e => {
+      const sel = e.target.closest('[data-variant-select]');
+      if (sel) {
+        const c = sel.closest('[data-card]');
+        $('[data-price]', c).textContent = money(byId(c.dataset.card).variants[Number(sel.value)].price);
+        return;
+      }
+      if (e.target.id === 'pd-variant') {
+        const id = $('[data-dlg-add]').dataset.dlgAdd;
+        $('#pd-price').textContent = money(byId(id).variants[Number(e.target.value)].price);
+        return;
+      }
+      if (e.target.name === 'delivery') updateTotals();
+    });
+
+    $('#checkout').addEventListener('submit', e => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const first = String(data.get('name') || '').trim().split(/\s+/)[0] || '';
+      const number = 'DEMO-' + String(Math.floor(1000 + Math.random() * 9000));
+      state.cart = []; saveCart(); renderCart();
+      $('#checkout-body').innerHTML = `
+        <div class="max-w-xl p-8 sm:p-12">
+          <h2 id="checkout-title" class="font-serif text-4xl font-bold leading-tight">Thank you${first ? ', ' + esc(first) : ''}!</h2>
+          <p class="mt-4 text-lg leading-relaxed">This is a demonstration page, so the order <strong>${number}</strong> was not placed: nothing will be sent or charged. In a real store, the final shopping step would look like this.</p>
+          <button type="button" data-close class="btn btn-dark mt-8">Return to store</button>
+        </div>`;
+      fixOrphans($('#checkout-body'));
+      $('#checkout').scrollTo({ top: 0 });
+    });
+
+    $('#menu-btn').addEventListener('click', e => {
+      const nav = $('#mobile-nav');
+      const open = nav.classList.toggle('hidden') === false;
+      e.currentTarget.setAttribute('aria-expanded', String(open));
+    });
+
+    document.addEventListener('error', e => {
+      const img = e.target;
+      if (!(img instanceof HTMLImageElement)) return;
+      const m = (img.getAttribute('src') || '').split('/').pop().match(/^([A-Za-z]+)-(\d+)\.webp$/);
+      if (m && PHOTOS[m[1]]) { img.src = remoteUrl(m[1], Number(m[2])); return; }
+      img.classList.add('failed');
+    }, true);
+
+    $$('img[data-photo]').forEach(img => {
+      const key = img.dataset.photo;
+      img.src = photoUrl(key, Number(img.dataset.w) || 800);
+      if (img.alt === '' && !img.hasAttribute('data-decor')) img.alt = PHOTOS[key].alt;
+    });
+
+    $('#credits').innerHTML = Object.values(PHOTOS)
+      .sort((a, b) => a.author.localeCompare(b.author, 'pl'))
+      .map(p => `
+        <li class="leading-snug">
+          <span class="block">${esc(p.alt)}</span>
+          <a class="underline underline-offset-4" href="https://unsplash.com/@${p.handle}${UTM}" target="_blank" rel="noopener">${esc(p.author)}</a>
+          on <a class="underline underline-offset-4" href="https://unsplash.com/photos/${p.page}${UTM}" target="_blank" rel="noopener">Unsplash</a>
+        </li>`).join('');
+
+    renderCatalog();
+    renderCart();
+    fixOrphans(document.body);
+  })();
+  </script>
+</body>
+</html>
