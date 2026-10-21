@@ -5,7 +5,7 @@ A collection of custom-coded website mockups built as demonstration pieces for m
 ## Tech Stack
 
 * **HTML5**
-* **Tailwind CSS (via CDN)**
+* **Tailwind CSS**
 * **Vanilla JavaScript**
 
 ## Local Development
