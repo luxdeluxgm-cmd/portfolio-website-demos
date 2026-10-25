@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Case Study: Korespondencja Masowa | Jan Tokarzewski</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta name="description" content="Prezentacja projektu: Generator Korespondencji Masowej i Książki Nadawczej.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-background text-textMain font-sans antialiased flex flex-col min-h-screen overflow-x-hidden">
+
+    <nav class="w-full py-4 px-4 sm:py-6 sm:px-12 flex justify-between items-center max-w-7xl mx-auto border-b-4 border-textMain bg-background sticky top-0 z-50 shadow-sm">
+        <a href="https://jantokarzewski.pl/kod" class="flex flex-col px-2 lg:hover:bg-accent active:bg-accent transition-none w-max">
+            <span class="font-display text-xl sm:text-2xl font-bold whitespace-nowrap">Jan Tokarzewski</span>
+            <span class="text-xs font-sans font-bold mt-0.5">Dane i Automatyzacja</span>
+        </a>
+        <div class="font-bold text-lg hidden sm:block">
+            Prezentacja Projektu
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col items-center w-full max-w-7xl mx-auto space-y-8 sm:space-y-12 px-3 sm:px-6 py-8 sm:py-12">
+
+        <section class="w-full bg-btnDark border-4 border-textMain px-4 py-8 sm:p-12 shadow-[4px_4px_0px_0px_#111827] sm:shadow-[8px_8px_0px_0px_#111827] text-left">
+            <div class="inline-block bg-accent border-2 border-textMain px-3 py-1 font-bold text-white shadow-[2px_2px_0px_0px_#111827] uppercase tracking-wider w-max mb-4 text-sm sm:text-base">
+                Formatowanie Danych & DOCX
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-bold uppercase tracking-tight mb-4 sm:mb-6">
+                Generator Korespondencji Masowej
+            </h1>
+            <p class="text-base sm:text-xl text-textMuted leading-relaxed max-w-4xl">
+                Samodzielna aplikacja desktopowa (.exe) automatyzująca wysyłkę korespondencji masowej. Zastępuje kilkanaście godzin ręcznego przepisywania danych z arkuszy Excel, generując gotowe pakiety pocztowe w zaledwie kilka minut.
+            </p>
+        </section>
+
+        <section class="w-full bg-btnDark border-4 border-textMain p-4 sm:p-12 shadow-[4px_4px_0px_0px_#111827] sm:shadow-[8px_8px_0px_0px_#111827] space-y-8">
+
+            <!-- Krok 1 -->
+            <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3">1. Nieuporządkowana baza wejściowa</h2>
+                <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
+                    Surowy plik CSV z listą odbiorców. Zawiera typowe błędy uniemożliwiające automatyczną wysyłkę: literówki w nazwach miejscowości, brakujące numery domów, zniekształcone kody pocztowe oraz nieujednolicone formatowanie danych.
+                </p>
+
+                <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                    <img src="img/koperty/dane-z-bledami.png" alt="Nieuporządkowana baza wejściowa CSV" class="w-full h-auto object-contain p-2">
+                </div>
+            </div>
+
+            <!-- Krok 2 -->
+            <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3">2. Walidacja słownikowa i kolejka wyjątków</h2>
+                <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
+                    Program weryfikuje adresy w oparciu o bazy referencyjne (m.in. TERYT). Poprawne rekordy są przetwarzane w tle, a niejednoznaczne wpisy trafiają do osobnego raportu CSV z precyzyjną informacją o przyczynie błędu (np. kod poza bazą, błędna nazwa ulicy), izolując problemy bez przerywania całego procesu.
+                </p>
+
+                <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                        <img src="img/koperty/program-po-przetworzeniu.png" alt="Raport błędów w programie" class="w-full h-auto max-h-[400px] object-contain p-2">
+                    </div>
+                    <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                        <img src="img/koperty/adresy_do_poprawy.png" alt="Wyizolowane adresy do poprawy" class="w-full h-auto max-h-[400px] object-contain p-2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Krok 3 -->
+            <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3">3. Scalenie po korekcie</h2>
+                <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
+                    Po szybkiej korekcie wyłącznie błędnych pozycji w pliku pomocniczym, narzędzie łączy poprawione dane z główną bazą i natychmiast przechodzi do generowania paczek z dokumentami.
+                </p>
+
+                <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                    <img src="img/koperty/koniec-pracy-programu..png" alt="Komunikat o zakończeniu pracy i wygenerowaniu plików" class="w-full h-auto max-h-[500px] object-contain p-2">
+                </div>
+            </div>
+
+            <!-- Krok 4 -->
+            <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3">4. Gotowe pakiety produkcyjne</h2>
+                <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
+                    Na wyjściu program generuje spersonalizowane szablony kopert w formacie .docx (gotowe do druku w wybranym układzie) oraz kompletną książkę nadawczą w formacie PDF, zgodną z obowiązującymi standardami Poczty Polskiej.
+                </p>
+
+                <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                        <img src="img/koperty/koperty-gotowe.png" alt="Wygenerowane koperty w formacie DOCX" class="w-full h-auto max-h-[400px] object-contain p-2">
+                    </div>
+                    <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                        <img src="img/koperty/ksiazka-nadawcza.png" alt="Wygenerowana książka nadawcza w PDF" class="w-full h-auto max-h-[400px] object-contain p-2">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="w-full flex flex-col sm:flex-row justify-between items-center gap-4 pt-4">
+            <a href="https://jantokarzewski.pl/kod" class="bg-background border-4 border-textMain px-6 py-3 font-bold shadow-[4px_4px_0px_0px_#111827] lg:hover:bg-accent lg:hover:text-white active:bg-accent active:text-white transition-none text-center w-full sm:w-auto">
+                Powrót
+            </a>
+            <a href="https://jantokarzewski.pl/kod#contact" class="bg-accent border-4 border-textMain text-white px-8 py-3 font-bold shadow-[4px_4px_0px_0px_#111827] lg:hover:bg-textMain active:bg-textMain transition-none text-center w-full sm:w-auto">
+                Skontaktuj się
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="w-full py-8 text-center border-t-4 border-textMain bg-textMain text-background mt-auto">
+        <p class="font-bold text-sm sm:text-base">© 2026 Jan Tokarzewski.</p>
+    </footer>
+
+</body>
+</html>
