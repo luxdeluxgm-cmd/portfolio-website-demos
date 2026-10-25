@@ -36,17 +36,16 @@
                 Generator Korespondencji Masowej
             </h1>
             <p class="text-base sm:text-xl text-textMuted leading-relaxed max-w-4xl">
-                Samodzielna aplikacja desktopowa (.exe) automatyzująca wysyłkę korespondencji masowej. Zastępuje kilkanaście godzin ręcznego przepisywania danych z arkuszy Excel, generując gotowe pakiety pocztowe w zaledwie kilka minut.
+                Samodzielna aplikacja desktopowa (.exe) automatyzująca wysyłkę korespondencji masowej. Zastępuje kilkanaście godzin ręcznego przepisywania danych z arkuszy .csv, generując gotowe pakiety pocztowe.
             </p>
         </section>
 
         <section class="w-full bg-btnDark border-4 border-textMain p-4 sm:p-12 shadow-[4px_4px_0px_0px_#111827] sm:shadow-[8px_8px_0px_0px_#111827] space-y-8">
 
-            <!-- Krok 1 -->
             <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-3">1. Nieuporządkowana baza wejściowa</h2>
                 <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
-                    Surowy plik CSV z listą odbiorców. Zawiera typowe błędy uniemożliwiające automatyczną wysyłkę: literówki w nazwach miejscowości, brakujące numery domów, zniekształcone kody pocztowe oraz nieujednolicone formatowanie danych.
+                    Surowy plik CSV z listą odbiorców. Zawiera typowe błędy uniemożliwiające automatyczną wysyłkę: literówki, brakujące dane oraz błędne kody pocztowe.
                 </p>
 
                 <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
@@ -54,48 +53,45 @@
                 </div>
             </div>
 
-            <!-- Krok 2 -->
             <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-3">2. Walidacja słownikowa i kolejka wyjątków</h2>
                 <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
-                    Program weryfikuje adresy w oparciu o bazy referencyjne (m.in. TERYT). Poprawne rekordy są przetwarzane w tle, a niejednoznaczne wpisy trafiają do osobnego raportu CSV z precyzyjną informacją o przyczynie błędu (np. kod poza bazą, błędna nazwa ulicy), izolując problemy bez przerywania całego procesu.
+                    Program weryfikuje adresy w oparciu o bazy referencyjne (m.in. TERYT). Poprawne rekordy są przetwarzane w tle, a niejednoznaczne wpisy trafiają do osobnego raportu CSV z precyzyjną informacją o przyczynie błędu (np. kod poza bazą, błędna nazwa ulicy), izolując problemy bez przerywania całego procesu. Program nigdy nie spróbuje naprawić danych samodzielnie, co pozwala na uniknięcie dodatkowych błędów.
                 </p>
 
-                <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
-                        <img src="img/koperty/program-po-przetworzeniu.png" alt="Raport błędów w programie" class="w-full h-auto max-h-[400px] object-contain p-2">
+                <div class="w-full flex flex-col items-center gap-6">
+                    <div class="w-full max-w-4xl border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                        <img src="img/koperty/program-po-przetworzeniu.png" alt="Raport błędów w programie" class="w-full h-auto object-contain p-2">
                     </div>
-                    <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
-                        <img src="img/koperty/adresy_do_poprawy.png" alt="Wyizolowane adresy do poprawy" class="w-full h-auto max-h-[400px] object-contain p-2">
+                    <div class="w-full max-w-4xl border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                        <img src="img/koperty/adresy_do_poprawy.png" alt="Wyizolowane adresy do poprawy" class="w-full h-auto object-contain p-2">
                     </div>
                 </div>
             </div>
 
-            <!-- Krok 3 -->
             <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-3">3. Scalenie po korekcie</h2>
                 <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
-                    Po szybkiej korekcie wyłącznie błędnych pozycji w pliku pomocniczym, narzędzie łączy poprawione dane z główną bazą i natychmiast przechodzi do generowania paczek z dokumentami.
+                    Po korekcie błędnych pozycji w pliku pomocniczym, narzędzie łączy poprawione dane z główną bazą i przechodzi do generowania dokumentów.
                 </p>
 
                 <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
-                    <img src="img/koperty/koniec-pracy-programu..png" alt="Komunikat o zakończeniu pracy i wygenerowaniu plików" class="w-full h-auto max-h-[500px] object-contain p-2">
+                    <img src="img/koperty/koniec-pracy-programu..png" alt="Komunikat o zakończeniu pracy i wygenerowaniu plików" class="w-full h-auto object-contain p-2">
                 </div>
             </div>
 
-            <!-- Krok 4 -->
             <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-3">4. Gotowe pakiety produkcyjne</h2>
                 <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
-                    Na wyjściu program generuje spersonalizowane szablony kopert w formacie .docx (gotowe do druku w wybranym układzie) oraz kompletną książkę nadawczą w formacie PDF, zgodną z obowiązującymi standardami Poczty Polskiej.
+                    Na wyjściu program generuje szablony kopert w formacie .docx, oraz kompletną książkę nadawczą w formacie PDF, zgodną z obowiązującymi standardami Poczty Polskiej.
                 </p>
 
-                <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
-                        <img src="img/koperty/koperty-gotowe.png" alt="Wygenerowane koperty w formacie DOCX" class="w-full h-auto max-h-[400px] object-contain p-2">
+                <div class="w-full flex flex-col items-center gap-6">
+                    <div class="w-full max-w-4xl border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                        <img src="img/koperty/koperty-gotowe.png" alt="Wygenerowane koperty w formacie DOCX" class="w-full h-auto object-contain p-2">
                     </div>
-                    <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
-                        <img src="img/koperty/ksiazka-nadawcza.png" alt="Wygenerowana książka nadawcza w PDF" class="w-full h-auto max-h-[400px] object-contain p-2">
+                    <div class="w-full max-w-4xl border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827]">
+                        <img src="img/koperty/ksiazka-nadawcza.png" alt="Wygenerowana książka nadawcza w PDF" class="w-full h-auto object-contain p-2">
                     </div>
                 </div>
             </div>
