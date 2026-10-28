@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monitorowanie Sieci | Jan Tokarzewski</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta name="description" content="Prezentacja projektu: Monitor Stabilności Sieci.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-background text-textMain font-sans antialiased flex flex-col min-h-screen overflow-x-hidden">
+
+    <nav class="w-full py-4 px-4 sm:py-6 sm:px-12 flex justify-between items-center max-w-7xl mx-auto border-b-4 border-textMain bg-background sticky top-0 z-50 shadow-sm">
+        <a href="https://jantokarzewski.pl/kod" class="flex flex-col px-2 lg:hover:bg-accent active:bg-accent transition-none w-max">
+            <span class="font-display text-xl sm:text-2xl font-bold whitespace-nowrap">Jan Tokarzewski</span>
+            <span class="text-xs font-sans font-bold mt-0.5">Dane i Automatyzacja</span>
+        </a>
+        <div class="font-bold text-lg hidden sm:block">
+            Prezentacja Projektu
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col items-center w-full max-w-7xl mx-auto space-y-8 sm:space-y-12 px-3 sm:px-6 py-8 sm:py-12">
+
+        <section class="w-full bg-btnDark border-4 border-textMain px-4 py-8 sm:p-12 shadow-[4px_4px_0px_0px_#111827] sm:shadow-[8px_8px_0px_0px_#111827] text-left">
+            <div class="inline-block bg-accent border-2 border-textMain px-3 py-1 font-bold text-white shadow-[2px_2px_0px_0px_#111827] uppercase tracking-wider w-max mb-4 text-sm sm:text-base">
+                Skrypty Diagnostyczne
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-bold uppercase tracking-tight mb-4 sm:mb-6">
+                Monitor Stabilności Sieci
+            </h1>
+            <p class="text-base sm:text-xl text-textMuted leading-relaxed max-w-4xl">
+                Lekki skrypt (.bat) monitorujący dostępność głównego łącza internetowego w placówce medycznej. Za fizyczne przełączenie na zapasowy modem LTE po padzie światłowodu odpowiada sprzęt sieciowy w budynku (switch/router). Skrypt natychmiast to wykrywa i wysyła powiadomienie e-mail do administratora, co pozwala od razu zgłosić awarię u operatora i kontrolować limit transferu na łączu awaryjnym.
+            </p>
+        </section>
+
+        <section class="w-full bg-btnDark border-4 border-textMain p-4 sm:p-12 shadow-[4px_4px_0px_0px_#111827] sm:shadow-[8px_8px_0px_0px_#111827] space-y-8">
+
+            <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3">1. Ustalenie łącza głównego i ciągły monitoring</h2>
+                <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
+                    Po uruchomieniu skrypt identyfikuje aktualną sieć (światłowód) i przypisany do niej adres IP. Następnie w tle, w równych odstępach czasu, sprawdza, czy sieć operuje na tym samym łączu.
+                </p>
+                
+                <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827] p-2">
+                    <img src="img/monitor/monitor_start.png" alt="Logi z uruchomienia monitora sieci" class="w-full h-auto object-contain">
+                </div>
+            </div>
+
+            <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3">2. Wykrycie fizycznego przełączenia na LTE</h2>
+                <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
+                    Kiedy główne łącze przestaje odpowiadać i następuje awaryjne przełączenie ruchu na awaryjny modem LTE, skrypt natychmiast wykrywa tę zmianę w sieci i rejestruje dokładny czas wystąpienia awarii.
+                </p>
+                
+                <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827] p-2">
+                    <img src="img/monitor/monitor_fail.pmg.png" alt="Log błędu - brak dostępu do sieci" class="w-full h-auto object-contain">
+                </div>
+            </div>
+
+            <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3">3. Natychmiastowy alert dla administratora</h2>
+                <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
+                    W momencie wykrycia, że placówka działa na łączu zapasowym, program od razu wysyła powiadomienie e-mail. Dzięki temu administrator wie o awarii natychmiast po jej wystąpieniu i może interweniować u operatora.
+                </p>
+                
+                <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827] p-2">
+                    <img src="img/monitor/monitor_sukces.png" alt="Odzyskanie sieci i wysłanie maila" class="w-full h-auto object-contain">
+                </div>
+            </div>
+
+        </section>
+
+        <div class="w-full flex flex-col sm:flex-row justify-between items-center gap-4 pt-4">
+            <a href="https://jantokarzewski.pl/kod" class="bg-background border-4 border-textMain px-6 py-3 font-bold shadow-[4px_4px_0px_0px_#111827] lg:hover:bg-accent lg:hover:text-white active:bg-accent active:text-white transition-none text-center w-full sm:w-auto">
+                Powrót
+            </a>
+            <a href="https://jantokarzewski.pl/kod#contact" class="bg-accent border-4 border-textMain text-white px-8 py-3 font-bold shadow-[4px_4px_0px_0px_#111827] lg:hover:bg-textMain active:bg-textMain transition-none text-center w-full sm:w-auto">
+                Skontaktuj się
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="w-full py-8 text-center border-t-4 border-textMain bg-textMain text-background mt-auto">
+        <p class="font-bold text-sm sm:text-base">© 2026 Jan Tokarzewski.</p>
+    </footer>
+
+</body>
+</html>
