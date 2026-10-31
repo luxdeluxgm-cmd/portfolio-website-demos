@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AutoBieżnik Serwis &amp; Wulkanizacja – Warszawa</title>
 <meta name="description" content="AutoBieżnik Serwis &amp; Wulkanizacja w Warszawie: wymiana opon, mechanika pojazdowa, diagnostyka komputerowa i serwis klimatyzacji.">
-<meta name="robots" content="noindex" />
+<meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="serwis/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,7 +168,7 @@
         </dl>
         <div class="mt-8 bg-signal text-ink p-5 max-w-md">
           <p class="font-display font-bold text-2xl leading-tight">Awaria w niedzielę lub w nocy?</p>
-          <p class="mt-1">Możliwość wezwania lawety 24/7 pod numerem alarmowym <a href="tel:+48555123456" class="font-bold underline">+48 555 123 456</a>.</p>
+          <p class="mt-1">Możliwość wezwania lawety 24/7 pod numerem awaryjnym <a href="tel:+48555123456" class="font-bold underline">+48 555 123 456</a>.</p>
         </div>
       </div>
 
@@ -275,7 +275,7 @@ const hour = now.getHours() + now.getMinutes() / 60;
 const range = day === 0 ? null : day === 6 ? [8, 14] : [8, 18];
 document.getElementById('status').textContent = range && hour >= range[0] && hour < range[1]
   ? 'Otwarte teraz, zapraszamy do ' + range[1] + ':00'
-  : 'Teraz zamknięte. Laweta 24/7 pod numerem alarmowym.';
+  : 'Teraz zamknięte. Laweta 24/7 pod numerem awaryjnym.';
 
 document.getElementById('rez').addEventListener('submit', e => {
   e.preventDefault();
