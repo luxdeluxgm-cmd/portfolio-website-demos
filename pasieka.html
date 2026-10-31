@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="pasieka/css/style.css">
+  <link rel="stylesheet" href="/pasieka/css/style.css">
 
 </head>
 
@@ -353,7 +353,7 @@
     };
     const UTM = '?utm_source=pasieka_u_wlodka_demo&utm_medium=referral';
     const sizeFor = w => (w > 900 ? 1200 : 800);
-    const IMG_DIR = 'pasieka/img/';
+    const IMG_DIR = '/pasieka/img/';
     const photoUrl = (key, w = 800) => `${IMG_DIR}${key}-${sizeFor(w)}.webp`;
     const remoteUrl = (key, w) => `https://images.unsplash.com/${PHOTOS[key].src}?auto=format&fit=max&w=${w}&q=75`;
 
@@ -809,4 +809,5 @@
   })();
   </script>
 </body>
-</html>
+</html> 
+ 

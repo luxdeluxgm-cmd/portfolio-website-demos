@@ -6,11 +6,11 @@
 <title>AutoBieżnik Serwis &amp; Wulkanizacja – Warszawa</title>
 <meta name="description" content="AutoBieżnik Serwis &amp; Wulkanizacja w Warszawie: wymiana opon, mechanika pojazdowa, diagnostyka komputerowa i serwis klimatyzacji.">
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/png" href="serwis/img/favicon.png">
+<link rel="icon" type="image/png" href="/serwis/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap&subset=latin-ext" rel="stylesheet">
-<link rel="stylesheet" href="serwis/css/style.css">
+<link rel="stylesheet" href="/serwis/css/style.css">
 </head>
 <body class="font-sans text-ink bg-white text-[17px] leading-relaxed antialiased pt-12">
 
@@ -66,7 +66,7 @@
       </div>
     </div>
     <div class="relative min-h-[300px] lg:min-h-[560px]">
-      <img src="serwis/img/hero-800.webp" srcset="serwis/img/hero-800.webp 800w, serwis/img/hero-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high" alt="Zbliżenie na oponę samochodu osobowego" class="absolute inset-0 w-full h-full object-cover">
+      <img src="/serwis/img/hero-800.webp" srcset="/serwis/img/hero-800.webp 800w, /serwis/img/hero-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high" alt="Zbliżenie na oponę samochodu osobowego" class="absolute inset-0 w-full h-full object-cover">
       <p id="status" class="absolute left-0 bottom-0 bg-white text-ink font-medium px-5 py-3 max-w-[85%]" aria-live="polite"></p>
     </div>
   </div>
@@ -100,7 +100,7 @@
         </li>
       </ul>
       <figure class="mt-10">
-        <img src="serwis/img/hotel-800.webp" srcset="serwis/img/hotel-800.webp 800w, serwis/img/hotel-1600.webp 1600w" sizes="(min-width: 1024px) 60vw, 100vw" alt="Regał z kompletami opon letnich" class="w-full h-64 sm:h-80 object-cover" loading="lazy">
+        <img src="/serwis/img/hotel-800.webp" srcset="/serwis/img/hotel-800.webp 800w, /serwis/img/hotel-1600.webp 1600w" sizes="(min-width: 1024px) 60vw, 100vw" alt="Regał z kompletami opon letnich" class="w-full h-64 sm:h-80 object-cover" loading="lazy">
         <figcaption class="mt-3 text-muted text-base max-w-xl">Hotel dla opon: Twoje koła czekają na sezon na regale, a nie w ciasnym garażu.</figcaption>
       </figure>
     </div>
@@ -136,7 +136,7 @@
 
 <section id="o-nas" class="bg-paper">
   <div class="max-w-6xl mx-auto grid lg:grid-cols-2">
-    <img src="serwis/img/onas-800.webp" srcset="serwis/img/onas-800.webp 800w, serwis/img/onas-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Stos opon samochodowych" class="w-full h-72 lg:h-full min-h-[360px] object-cover" loading="lazy">
+    <img src="/serwis/img/onas-800.webp" srcset="/serwis/img/onas-800.webp 800w, /serwis/img/onas-1600.webp 1600w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Stos opon samochodowych" class="w-full h-72 lg:h-full min-h-[360px] object-cover" loading="lazy">
     <div class="px-5 py-16 lg:py-24 lg:pl-14">
       <h2 class="font-display font-bold text-5xl leading-none">O nas</h2>
       <p class="mt-6 text-xl max-w-lg">Jesteśmy zespołem pasjonatów motoryzacji z ponad 10-letnim doświadczeniem w branży.</p>
@@ -146,7 +146,7 @@
   </div>
 </section>
 
-<img src="serwis/img/banner-800.webp" srcset="serwis/img/banner-800.webp 800w, serwis/img/banner-1600.webp 1600w" sizes="100vw" alt="Pomarańczowy pachołek drogowy obok stosu opon" class="w-full h-56 sm:h-72 object-cover" loading="lazy">
+<img src="/serwis/img/banner-800.webp" srcset="/serwis/img/banner-800.webp 800w, /serwis/img/banner-1600.webp 1600w" sizes="100vw" alt="Pomarańczowy pachołek drogowy obok stosu opon" class="w-full h-56 sm:h-72 object-cover" loading="lazy">
 
 <section id="kontakt" class="py-20">
   <div class="max-w-6xl mx-auto px-5">
@@ -269,7 +269,7 @@ menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   btn.setAttribute('aria-expanded', 'false');
 }));
 
-const now = new Date();
+const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Warsaw' }));
 const day = now.getDay();
 const hour = now.getHours() + now.getMinutes() / 60;
 const range = day === 0 ? null : day === 6 ? [8, 14] : [8, 18];
@@ -285,3 +285,5 @@ document.getElementById('rez').addEventListener('submit', e => {
 </script>
 </body>
 </html>
+ 
+ 

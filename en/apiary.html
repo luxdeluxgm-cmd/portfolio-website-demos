@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="apiary/css/style.css">
+  <link rel="stylesheet" href="/en/apiary/css/style.css">
 
 </head>
 
@@ -330,7 +330,7 @@
 
     const $  = (s, r = document) => r.querySelector(s); 
     const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-    const money = c => new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(c / 100);
+    const money = c => new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'PLN' }).format(c / 100);
     const esc = s => String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
     const plural = (n, [one, few, many]) =>
       n === 1 ? one : (n % 10 >= 2 && n % 10 <= 4 && !(n % 100 >= 12 && n % 100 <= 14)) ? few : many;
@@ -353,7 +353,7 @@
     };
     const UTM = '?utm_source=pasieka_u_wlodka_demo&utm_medium=referral';
     const sizeFor = w => (w > 900 ? 1200 : 800);
-    const IMG_DIR = 'apiary/img/';
+    const IMG_DIR = '/en/apiary/img/';
     const photoUrl = (key, w = 800) => `${IMG_DIR}${key}-${sizeFor(w)}.webp`;
     const remoteUrl = (key, w) => `https://images.unsplash.com/${PHOTOS[key].src}?auto=format&fit=max&w=${w}&q=75`;
 
@@ -809,4 +809,5 @@
   })();
   </script>
 </body>
-</html>
+</html> 
+ 
