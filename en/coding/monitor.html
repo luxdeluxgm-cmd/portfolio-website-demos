@@ -32,7 +32,7 @@
                 Network Stability Monitor
             </h1>
             <p class="text-base sm:text-xl text-textMuted leading-relaxed max-w-4xl">
-                A lightweight script (.bat) to monitor the availability of the main internet connection. The physical failover to a backup LTE modem after a fiber optic outage is handled by the networking hardware in the building (switch/fallback). The script instantly detects this and sends an email notification to the administrator, allowing them to immediately report the outage to the ISP and control the data transfer limit on the backup connection.
+                A lightweight script (.bat) to monitor the availability of the main internet connection. The physical failover to a backup modem after is handled by the networking hardware in the building (switch/fallback). The script instantly detects this and sends an email notification to the administrator, allowing them to immediately report the outage to the ISP and control the data transfer limit on the backup connection.
             </p>
         </section>
 
@@ -41,7 +41,7 @@
             <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-3">1. Establishing the Main Connection & Continuous Monitoring</h2>
                 <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
-                    Upon launch, the script identifies the current network (fiber) and its assigned IP address. Then, in the background and at regular intervals, it checks if the network is still operating on the same connection.
+                    Upon launch, the script identifies the current network and its assigned IP address. Then, in the background and at regular intervals, it checks if the network is still operating on the same connection.
                 </p>
                 
                 <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827] p-2">
@@ -50,9 +50,9 @@
             </div>
 
             <div class="border-4 border-textMain bg-background p-6 sm:p-8 shadow-[4px_4px_0px_0px_#111827]">
-                <h2 class="text-2xl sm:text-3xl font-bold mb-3">2. Detecting the Physical Failover to LTE</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3">2. Detecting the Physical Failover</h2>
                 <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
-                    When the main connection stops responding and traffic is emergency-routed to the backup LTE modem, the script immediately detects this network change and logs the exact time of the outage.
+                    When the main connection stops responding and traffic is emergency-routed to the backup modem, the script immediately detects this network change and logs the exact time of the outage.
                 </p>
                 
                 <div class="w-full border-4 border-textMain bg-[#e5e7eb] flex items-center justify-center overflow-hidden shadow-[4px_4px_0px_0px_#111827] p-2">
